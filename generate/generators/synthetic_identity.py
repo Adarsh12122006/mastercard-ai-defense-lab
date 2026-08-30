@@ -34,6 +34,7 @@ def generate_synthetic_identity_attacks(
     for i in range(n_identities):
         synth_user_id = f"synthid_{i:05d}"
         card_age_days = random.randint(1, 25)  # brand-new account
+        synth_device_id = f"dev_{uuid.uuid4().hex[:8]}"  # single device runs the whole bust-out
 
         # a few small "credibility-building" transactions first
         n_building = random.randint(2, 5)
@@ -50,7 +51,13 @@ def generate_synthetic_identity_attacks(
                 "latitude": round(random.uniform(-60, 60), 4),
                 "longitude": round(random.uniform(-150, 150), 4),
                 "card_age_days_at_tx": card_age_days + j,
-                "is_fraud": 1,
+                "channel": "ecom",
+            "device_id": synth_device_id,
+            "auth_confidence": round(float(np.random.uniform(0.6, 0.9)), 4),
+            "dispute_filed": 0,
+            "dispute_narrative_similarity": 0.0,
+            "otp_override": 0,
+            "is_fraud": 1,
                 "attack_type": "synthetic_identity",
             })
 
@@ -68,7 +75,13 @@ def generate_synthetic_identity_attacks(
                 "latitude": round(random.uniform(-60, 60), 4),
                 "longitude": round(random.uniform(-150, 150), 4),
                 "card_age_days_at_tx": card_age_days + n_building + 3,
-                "is_fraud": 1,
+                "channel": "ecom",
+            "device_id": synth_device_id,
+            "auth_confidence": round(float(np.random.uniform(0.6, 0.9)), 4),
+            "dispute_filed": 0,
+            "dispute_narrative_similarity": 0.0,
+            "otp_override": 0,
+            "is_fraud": 1,
                 "attack_type": "synthetic_identity",
             })
 

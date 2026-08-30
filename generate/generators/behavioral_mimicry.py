@@ -59,6 +59,12 @@ def generate_behavioral_mimicry_attacks(
             "latitude": round(lat, 4),
             "longitude": round(lon, 4),
             "card_age_days_at_tx": profile["card_age_days"],
+            "channel": "ecom",
+            "device_id": f"dev_{uuid.uuid4().hex[:8]}",
+            "auth_confidence": round(float(np.random.uniform(0.75, 0.95)), 4),
+            "dispute_filed": 0,
+            "dispute_narrative_similarity": 0.0,
+            "otp_override": 0,
             "is_fraud": 1,
             "attack_type": "behavioral_mimicry",
         })

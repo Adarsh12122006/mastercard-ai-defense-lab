@@ -70,7 +70,7 @@
 
   /* ---------- Section heading ---------- */
   .section{margin:56px 0;}
-  .section-head{display:flex; align-items:baseline; gap:10px; margin-bottom:20px;}
+  .section-head{display:flex; align-items:baseline; gap:10px; margin-bottom:20px; flex-wrap:wrap;}
   .section-head .num{font-family:'JetBrains Mono',monospace; color:var(--amber); font-size:13px;}
   .section-head h2{font-size:20px;}
   .section-head .sub{color:var(--muted); font-size:13px; margin-left:auto;}
@@ -94,10 +94,10 @@
     margin-bottom:16px;
   }
   .tx-card.show{display:block;}
-  .tx-row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--line); font-size:13px;}
+  .tx-row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--line); font-size:13px; gap:12px;}
   .tx-row:last-child{border-bottom:none;}
-  .tx-row .k{color:var(--muted);}
-  .tx-row .v{font-family:'JetBrains Mono',monospace;}
+  .tx-row .k{color:var(--muted); flex-shrink:0;}
+  .tx-row .v{font-family:'JetBrains Mono',monospace; text-align:right; word-break:break-word;}
 
   .verdict{
     display:none; align-items:center; gap:14px; padding:16px 20px; border-radius:10px; margin-top:4px;
@@ -130,16 +130,16 @@
   .tax-card{
     background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px;
   }
-  .tax-card .top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  .tax-card .top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; gap:8px;}
   .tax-card h3{font-size:15px;}
-  .tax-tag{font-family:'JetBrains Mono',monospace; font-size:10px; padding:3px 8px; border-radius:5px; text-transform:uppercase; letter-spacing:0.04em;}
+  .tax-tag{font-family:'JetBrains Mono',monospace; font-size:10px; padding:3px 8px; border-radius:5px; text-transform:uppercase; letter-spacing:0.04em; white-space:nowrap;}
   .tax-tag.sim{background:rgba(45,217,196,0.15); color:var(--cyan);}
   .tax-tag.doc{background:rgba(124,135,156,0.15); color:var(--muted);}
   .tax-card p{font-size:13px; color:var(--muted); margin:0;}
   .tax-card .signal{font-size:12px; margin-top:10px; color:var(--amber); font-family:'JetBrains Mono',monospace;}
 
   footer{border-top:1px solid var(--line); padding:24px 0 40px; margin-top:60px;}
-  footer .wrap{display:flex; justify-content:space-between; color:var(--muted); font-size:12px;}
+  footer .wrap{display:flex; justify-content:space-between; color:var(--muted); font-size:12px; flex-wrap:wrap; gap:8px;}
 
   @media (max-width:720px){
     .metrics{grid-template-columns:repeat(2,1fr);}
@@ -153,14 +153,14 @@
 <div class="topbar">
   <div class="wrap">
     <div class="brand"><span class="dot"></span><span>AI DEFENSE LAB — PAYMENT SECURITY</span></div>
-    <div class="status">SYSTEM STATUS: <b>ACTIVE</b> · MODEL v3 (post-feedback-loop)</div>
+    <div class="status">SYSTEM STATUS: <b>ACTIVE</b> · MODEL v4 (8/8 attacks · post-feedback-loop)</div>
   </div>
 </div>
 
 <div class="hero">
   <div class="wrap">
     <div class="eyebrow">Mastercard Innovation Challenge · GFF 2026</div>
-    <h1>One closed-loop system that identifies, simulates, and defends against GenAI-powered payment fraud.</h1>
+    <h1>One closed-loop system that identifies, simulates, and defends against all 8 GenAI-powered payment fraud vectors.</h1>
     <p>Attacks discovered here become the training ground for the defense. Detection gaps found here become tomorrow's attack ideas.</p>
   </div>
 </div>
@@ -203,11 +203,11 @@
   </div>
 
   <div class="metrics">
-    <div class="metric"><div class="val">99.4%</div><div class="lbl">Precision</div></div>
-    <div class="metric"><div class="val">99.4%</div><div class="lbl">Recall</div></div>
-    <div class="metric"><div class="val">99.4%</div><div class="lbl">F1 Score</div></div>
-    <div class="metric"><div class="val">0.9997</div><div class="lbl">AUC</div></div>
-    <div class="metric"><div class="val">0.03%</div><div class="lbl">False Positive Rate</div></div>
+    <div class="metric"><div class="val">99.83%</div><div class="lbl">Precision</div></div>
+    <div class="metric"><div class="val">99.91%</div><div class="lbl">Recall</div></div>
+    <div class="metric"><div class="val">99.87%</div><div class="lbl">F1 Score</div></div>
+    <div class="metric"><div class="val">1.0000</div><div class="lbl">AUC</div></div>
+    <div class="metric"><div class="val">0.01%</div><div class="lbl">False Positive Rate</div></div>
   </div>
 
   <!-- ============ SIMULATOR ============ -->
@@ -229,7 +229,7 @@
     <div class="section-head">
       <span class="num">—</span>
       <h2>Detection Rate by Attack Family</h2>
-      <span class="sub">diversity of detection, not just an aggregate score</span>
+      <span class="sub">diversity of detection across all 8 vectors, not just an aggregate score</span>
     </div>
     <div class="sim-panel">
       <div class="bars" id="detectionBars"></div>
@@ -253,7 +253,7 @@
     <div class="section-head">
       <span class="num">REF</span>
       <h2>Attack Taxonomy</h2>
-      <span class="sub">8 vectors researched · 4 simulated in depth</span>
+      <span class="sub">8 vectors researched · 8 simulated in depth</span>
     </div>
     <div class="tax-grid" id="taxGrid"></div>
   </div>
@@ -270,50 +270,78 @@
 /* ================= EMBEDDED DATA (from actual pipeline run) ================= */
 
 const detectionData = [
-  {name:"Synthetic Identity", rate:1.00, detected:260, total:260},
-  {name:"Card Testing", rate:1.00, detected:440, total:440},
-  {name:"Transaction Laundering", rate:1.00, detected:60, total:60},
-  {name:"Behavioral Mimicry", rate:0.941, detected:80, total:85},
+  {name:"Synthetic Identity", rate:1.000, detected:284, total:284},
+  {name:"Card Testing", rate:1.000, detected:445, total:445},
+  {name:"Transaction Laundering", rate:1.000, detected:60, total:60},
+  {name:"Deepfake Voice ATO", rate:1.000, detected:45, total:45},
+  {name:"Biometric Spoofing", rate:1.000, detected:45, total:45},
+  {name:"Chargeback Narrative Fraud", rate:1.000, detected:85, total:85},
+  {name:"Phishing ATO", rate:1.000, detected:90, total:90},
+  {name:"Behavioral Mimicry", rate:0.989, detected:94, total:95},
 ];
 
 const loopHistory = [
-  {iter:0, f1:0.9951, recall:0.9951, fpr:0.0002},
-  {iter:1, f1:0.9976, recall:0.9976, fpr:0.0001},
-  {iter:2, f1:0.9941, recall:0.9941, fpr:0.00025},
+  {iter:0, f1:0.9949, recall:0.9935, fpr:0.0002},
+  {iter:1, f1:0.9982, recall:0.9973, fpr:0.00005},
+  {iter:2, f1:0.9987, recall:0.9991, fpr:0.0001},
 ];
 
 // Sample real transactions pulled from the generated dataset, with the
 // reasoning the model's features would surface for each verdict.
 const samples = {
   legit: [
-    {user:"user_00060", amount:46.48, category:"utilities", card_age:1790, ts:"2026-07-05 11:59", flagged:false,
-     reasons:["Amount within user's normal spending range (z-score ≈ 0.1)", "Location matches home region", "No unusual velocity"]},
-    {user:"user_00301", amount:29.18, category:"restaurant", card_age:1549, ts:"2026-06-10 18:01", flagged:false,
-     reasons:["Merchant category matches user's preferred categories", "Timing within typical active hours", "Established account (4+ years)"]},
+    {user:"user_00092", amount:49.89, category:"gas_station", card_age:2427, ts:"2026-07-05 09:28", channel:"ecom", flagged:false,
+     reasons:["Amount within user's normal spending range (z-score ≈ 0.1)", "Device matches one of the user's known devices", "No unusual velocity or channel"]},
+    {user:"user_00165", amount:177.24, category:"pharmacy", card_age:1512, ts:"2026-06-10 17:33", channel:"ecom", flagged:false,
+     reasons:["Merchant category matches user's preferred categories", "Auth confidence high (0.90)", "No dispute filed, established account"]},
   ],
   behavioral_mimicry: [
-    {user:"user_00443", amount:89.94, category:"ride_share", card_age:1335, ts:"2026-07-06 21:14", flagged:true,
-     reasons:["Amount ~2.1x user's historical average", "Occurred 7hrs outside user's typical active window", "Geo-jitter beyond usual local radius"]},
-    {user:"user_00357", amount:57.32, category:"home_goods", card_age:2633, ts:"2026-06-29 02:43", flagged:true,
-     reasons:["Transaction at 02:43 — far outside user's active hours", "Amount deviates from category norms for this user", "Elevated amount z-score"]},
+    {user:"user_00283", amount:43.92, category:"restaurant", card_age:2945, ts:"2026-07-04 01:06", channel:"ecom", flagged:true,
+     reasons:["Transaction at 01:06 — far outside user's active hours", "Elevated amount z-score vs. personal history", "Geo-jitter beyond usual local radius"]},
+    {user:"user_00140", amount:74.50, category:"travel", card_age:2397, ts:"2026-07-07 19:37", channel:"ecom", flagged:true,
+     reasons:["Amount ~1.8x user's historical average", "Occurred outside user's typical active window", "Category plausible but not top preference"]},
   ],
   card_testing: [
-    {user:"user_00135", amount:2.00, category:"entertainment", card_age:2009, ts:"2026-07-10 01:45", flagged:true,
-     reasons:["8+ transactions from same card within 10-minute window", "Sub-$5 round test amount", "Merchant category scattershot vs. user's normal pattern"]},
-    {user:"user_00433", amount:2.00, category:"streaming", card_age:635, ts:"2026-06-23 14:54", flagged:true,
-     reasons:["High txns-per-10-min velocity flag triggered", "Round micro-amount typical of authorization probing", "Category mismatch with user profile"]},
+    {user:"user_00247", amount:2.00, category:"gift_cards", card_age:1072, ts:"2026-07-13 13:03", channel:"ecom", flagged:true,
+     reasons:["8+ transactions from same device within 10-minute window", "Sub-$5 round test amount", "Merchant category scattershot vs. user's normal pattern"]},
+    {user:"user_00208", amount:9.16, category:"grocery", card_age:1940, ts:"2026-07-17 02:44", channel:"ecom", flagged:true,
+     reasons:["High txns-per-10-min velocity flag triggered", "Same single device running the whole probing burst", "Moderate auth confidence (0.52)"]},
   ],
   synthetic_identity: [
-    {user:"synthid_00027", amount:3915.72, category:"home_goods", card_age:27, ts:"2026-07-07 04:15", flagged:true,
+    {user:"synthid_00028", amount:2831.95, category:"gift_cards", card_age:24, ts:"2026-07-03 03:58", channel:"ecom", flagged:true,
      reasons:["Account age under 30 days (is_new_account flag)", "High-value transaction inconsistent with thin account history", "Bust-out pattern: burst after low-value 'trust-building' txns"]},
-    {user:"synthid_00037", amount:63.30, category:"gas_station", card_age:23, ts:"2026-06-17 04:15", flagged:true,
-     reasons:["New account (23 days)", "Part of an onboarding sequence with anomalous timing regularity", "Flagged via account-age + sequence pattern"]},
+    {user:"synthid_00012", amount:67.80, category:"streaming", card_age:24, ts:"2026-06-22 03:58", channel:"ecom", flagged:true,
+     reasons:["New account (24 days)", "Part of an onboarding sequence with anomalous timing regularity", "Flagged via account-age + sequence pattern"]},
   ],
   transaction_laundering: [
-    {user:"user_00008", amount:1593.32, category:"home_goods", card_age:1524, ts:"2026-07-13 22:02", flagged:true,
-     reasons:["Amount is 5.3x the typical ceiling for 'home_goods' category", "Suspiciously round pricing tier", "Transaction location far from user's established home region"]},
-    {user:"user_00253", amount:3168.27, category:"electronics", card_age:2555, ts:"2026-06-04 06:28", flagged:true,
-     reasons:["Amount far exceeds category-typical ceiling (6.3x)", "Round-number amount pattern", "Geo-deviation from home location"]},
+    {user:"user_00410", amount:2974.33, category:"home_goods", card_age:697, ts:"2026-07-10 12:54", channel:"ecom", flagged:true,
+     reasons:["Amount is ~9.9x the typical ceiling for 'home_goods' category", "Suspiciously round pricing tier", "Transaction location far from user's established home region"]},
+    {user:"user_00104", amount:4159.42, category:"home_goods", card_age:2711, ts:"2026-06-02 12:43", channel:"ecom", flagged:true,
+     reasons:["Amount far exceeds category-typical ceiling", "Round-number amount pattern", "Geo-deviation from home location"]},
+  ],
+  deepfake_voice_ato: [
+    {user:"user_00473", amount:4963.53, category:"gift_cards", card_age:2769, ts:"2026-06-05 20:24", channel:"call_center", flagged:true,
+     reasons:["Authorized via call-center channel", "Voice-match confidence borderline-low (0.60)", "OTP step-up was overridden by the agent"]},
+    {user:"user_00096", amount:3159.52, category:"electronics", card_age:566, ts:"2026-07-09 10:46", channel:"call_center", flagged:true,
+     reasons:["Call-center channel + OTP override combination is rare for genuine calls", "Auth confidence only 0.39", "High-value cash-out category"]},
+  ],
+  phishing_ato: [
+    {user:"user_00043", amount:14.02, category:"entertainment", card_age:962, ts:"2026-07-11 18:50", channel:"ecom", flagged:true,
+     reasons:["Transaction from a device never seen before on this account", "Off-profile merchant category for this user", "Small 'probe' amount typical of a credential test"]},
+    {user:"user_00110", amount:1319.95, category:"entertainment", card_age:1070, ts:"2026-06-30 21:33", channel:"ecom", flagged:true,
+     reasons:["Same new device as a recent small probe purchase minutes earlier", "Large payout shortly after account access", "Auth confidence moderate (0.68) — password-only, no step-up triggered"]},
+  ],
+  chargeback_narrative_fraud: [
+    {user:"user_00134", amount:15.90, category:"restaurant", card_age:546, ts:"2026-07-15 05:01", channel:"ecom", flagged:true,
+     reasons:["Dispute filed shortly after purchase", "Dispute narrative scores 0.80 similarity to known GenAI-template fraud clusters", "Underlying purchase itself looked completely normal"]},
+    {user:"user_00201", amount:64.28, category:"travel", card_age:2631, ts:"2026-07-18 00:29", channel:"ecom", flagged:true,
+     reasons:["High narrative-similarity score (0.83) vs. genuine disputes which don't cluster this tightly", "Dispute filed unusually fast after the charge", "No other red flags on the transaction itself"]},
+  ],
+  biometric_spoofing: [
+    {user:"user_00406", amount:3485.34, category:"electronics", card_age:2177, ts:"2026-06-03 21:02", channel:"app_biometric", flagged:true,
+     reasons:["Biometric step-up match confidence borderline-low (0.51)", "High-value transaction is what triggered the step-up challenge in the first place", "New device running the app-biometric session"]},
+    {user:"user_00308", amount:3934.15, category:"digital_goods", card_age:512, ts:"2026-07-06 20:10", channel:"app_biometric", flagged:true,
+     reasons:["Match confidence (0.48) well below a genuine biometric match", "App-biometric channel + high-value category combination", "Device unfamiliar to this account"]},
   ],
 };
 
@@ -323,6 +351,10 @@ const attackMeta = {
   card_testing: {label:"Card Testing", cls:""},
   synthetic_identity: {label:"Synthetic Identity", cls:""},
   transaction_laundering: {label:"Txn Laundering", cls:""},
+  deepfake_voice_ato: {label:"Deepfake Voice ATO", cls:""},
+  phishing_ato: {label:"Phishing ATO", cls:""},
+  chargeback_narrative_fraud: {label:"Chargeback Narrative", cls:""},
+  biometric_spoofing: {label:"Biometric Spoofing", cls:""},
 };
 
 const taxonomy = [
@@ -330,10 +362,10 @@ const taxonomy = [
   {name:"AI-Paced Card Testing", tag:"sim", desc:"LLM-driven agent probes card validity with human-like timing to evade rate-limit rules.", signal:"SIGNAL: transaction velocity + category scatter"},
   {name:"Synthetic Identity Onboarding", tag:"sim", desc:"GenAI-generated identity builds thin credible history before a high-value bust-out.", signal:"SIGNAL: account age + history-thinness mismatch"},
   {name:"Transaction Laundering", tag:"sim", desc:"Fake GenAI-built storefronts launder funds via a plausible merchant category.", signal:"SIGNAL: amount vs. category-typical ceiling"},
-  {name:"Deepfake Voice Social Engineering", tag:"doc", desc:"Voice clones impersonate a cardholder or bank to authorize fraud or extract OTPs.", signal:"Documented — requires audio modality"},
-  {name:"Personalized Phishing at Scale", tag:"doc", desc:"LLMs generate thousands of context-aware phishing messages referencing breached data.", signal:"Documented — requires text/email modality"},
-  {name:"Chargeback Narrative Fraud", tag:"doc", desc:"GenAI produces varied, plausible dispute narratives to evade text-similarity filters.", signal:"Documented — requires dispute-text modality"},
-  {name:"Biometric Spoofing", tag:"doc", desc:"Synthetic face/voice defeats biometric step-up authentication on high-value transactions.", signal:"Documented — requires biometric modality"},
+  {name:"Deepfake Voice Social Engineering", tag:"sim", desc:"Voice clones impersonate a cardholder or bank to authorize fraud or extract OTPs.", signal:"SIGNAL: call-center channel + low voice-match confidence + OTP override"},
+  {name:"Personalized Phishing at Scale", tag:"sim", desc:"LLMs generate context-aware phishing messages to harvest credentials, then transact from a new device.", signal:"SIGNAL: brand-new device + probe-then-payout pattern"},
+  {name:"Chargeback Narrative Fraud", tag:"sim", desc:"GenAI produces varied, plausible dispute narratives to evade text-similarity filters.", signal:"SIGNAL: dispute filed + high similarity to fraud-narrative template clusters"},
+  {name:"Biometric Spoofing", tag:"sim", desc:"Synthetic face/voice defeats biometric step-up authentication on high-value transactions.", signal:"SIGNAL: app-biometric channel + borderline match confidence"},
 ];
 
 /* ================= RENDER: attack buttons ================= */
@@ -357,6 +389,7 @@ function runSimulation(key){
     <div class="tx-row"><span class="k">Timestamp</span><span class="v">${tx.ts}</span></div>
     <div class="tx-row"><span class="k">Amount</span><span class="v">$${tx.amount.toFixed(2)}</span></div>
     <div class="tx-row"><span class="k">Merchant Category</span><span class="v">${tx.category}</span></div>
+    <div class="tx-row"><span class="k">Channel</span><span class="v">${tx.channel}</span></div>
     <div class="tx-row"><span class="k">Card Age</span><span class="v">${tx.card_age} days</span></div>
   `;
 

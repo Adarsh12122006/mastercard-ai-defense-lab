@@ -1,34 +1,54 @@
 {
-  "precision": 0.9940828402366864,
-  "recall": 0.9940828402366864,
-  "f1": 0.9940828402366864,
-  "auc": 0.9997345562130177,
-  "false_positive_rate": 0.00025,
+  "precision": 0.9982363315696648,
+  "recall": 0.9982363315696648,
+  "f1": 0.9982363315696648,
+  "auc": 0.9999996031746031,
+  "false_positive_rate": 0.0001,
   "confusion_matrix": {
-    "tn": 19995,
-    "fp": 5,
-    "fn": 5,
-    "tp": 840
+    "tn": 19998,
+    "fp": 2,
+    "fn": 2,
+    "tp": 1132
   },
   "per_attack_type": {
     "synthetic_identity": {
-      "detected": 260,
-      "total": 260,
-      "detection_rate": 1.0
-    },
-    "behavioral_mimicry": {
-      "detected": 80,
-      "total": 85,
-      "detection_rate": 0.9411764705882353
-    },
-    "card_testing": {
-      "detected": 440,
-      "total": 440,
+      "detected": 284,
+      "total": 284,
       "detection_rate": 1.0
     },
     "transaction_laundering": {
       "detected": 60,
       "total": 60,
+      "detection_rate": 1.0
+    },
+    "card_testing": {
+      "detected": 445,
+      "total": 445,
+      "detection_rate": 1.0
+    },
+    "deepfake_voice_ato": {
+      "detected": 45,
+      "total": 45,
+      "detection_rate": 1.0
+    },
+    "biometric_spoofing": {
+      "detected": 45,
+      "total": 45,
+      "detection_rate": 1.0
+    },
+    "chargeback_narrative_fraud": {
+      "detected": 85,
+      "total": 85,
+      "detection_rate": 1.0
+    },
+    "behavioral_mimicry": {
+      "detected": 78,
+      "total": 80,
+      "detection_rate": 0.975
+    },
+    "phishing_ato": {
+      "detected": 90,
+      "total": 90,
       "detection_rate": 1.0
     }
   }

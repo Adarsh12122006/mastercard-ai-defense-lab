@@ -68,6 +68,12 @@ def generate_transaction_laundering_attacks(
             "latitude": lat,
             "longitude": lon,
             "card_age_days_at_tx": profile["card_age_days"],
+            "channel": "ecom",
+            "device_id": f"dev_{uuid.uuid4().hex[:8]}",
+            "auth_confidence": round(float(np.random.uniform(0.6, 0.9)), 4),
+            "dispute_filed": 0,
+            "dispute_narrative_similarity": 0.0,
+            "otp_override": 0,
             "is_fraud": 1,
             "attack_type": "transaction_laundering",
         })
