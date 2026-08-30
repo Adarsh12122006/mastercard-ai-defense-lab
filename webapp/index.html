@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Defense Lab — Payment Security</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0F1C;
+    --panel:#121A2E;
+    --panel-2:#0E1526;
+    --line:#233047;
+    --cyan:#2DD9C4;
+    --amber:#F5A623;
+    --red:#EF4444;
+    --text:#E7EAF2;
+    --muted:#7C879C;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; margin:0;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
+  }
+  .topbar .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand .dot{width:10px; height:10px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px var(--cyan);}
+  .brand span{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; letter-spacing:0.02em;}
+  .topbar .status{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted);}
+  .topbar .status b{color:var(--cyan);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:56px 0 40px; text-align:center;}
+  .hero .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.12em;
+    color:var(--amber); text-transform:uppercase; margin-bottom:14px;
+  }
+  .hero h1{font-size:34px; font-weight:700; max-width:720px; margin:0 auto 14px; line-height:1.25;}
+  .hero p{color:var(--muted); max-width:560px; margin:0 auto; font-size:15px;}
+
+  /* ---------- Loop diagram ---------- */
+  .loop-stage{display:flex; justify-content:center; padding:36px 0 8px;}
+  .loop-node{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+  }
+  .loop-node .label{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase;}
+
+  /* ---------- Metrics strip ---------- */
+  .metrics{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;
+    margin:8px 0 48px;
+  }
+  .metric{background:var(--panel); padding:22px 16px; text-align:center;}
+  .metric .val{font-family:'JetBrains Mono',monospace; font-size:26px; font-weight:700; color:var(--cyan);}
+  .metric .lbl{font-size:11px; color:var(--muted); margin-top:6px; text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* ---------- Section heading ---------- */
+  .section{margin:56px 0;}
+  .section-head{display:flex; align-items:baseline; gap:10px; margin-bottom:20px;}
+  .section-head .num{font-family:'JetBrains Mono',monospace; color:var(--amber); font-size:13px;}
+  .section-head h2{font-size:20px;}
+  .section-head .sub{color:var(--muted); font-size:13px; margin-left:auto;}
+
+  /* ---------- Simulator ---------- */
+  .sim-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:24px;
+  }
+  .sim-controls{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px;}
+  .attack-btn{
+    font-family:'JetBrains Mono',monospace; font-size:12px; padding:9px 14px; border-radius:8px;
+    border:1px solid var(--line); background:var(--panel-2); color:var(--text); cursor:pointer;
+    transition:border-color .15s, color .15s;
+  }
+  .attack-btn:hover{border-color:var(--amber); color:var(--amber);}
+  .attack-btn.legit:hover{border-color:var(--cyan); color:var(--cyan);}
+
+  .tx-card{
+    display:none;
+    border:1px solid var(--line); border-radius:10px; padding:18px 20px; background:var(--panel-2);
+    margin-bottom:16px;
+  }
+  .tx-card.show{display:block;}
+  .tx-row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--line); font-size:13px;}
+  .tx-row:last-child{border-bottom:none;}
+  .tx-row .k{color:var(--muted);}
+  .tx-row .v{font-family:'JetBrains Mono',monospace;}
+
+  .verdict{
+    display:none; align-items:center; gap:14px; padding:16px 20px; border-radius:10px; margin-top:4px;
+  }
+  .verdict.show{display:flex;}
+  .verdict.flagged{background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.4);}
+  .verdict.clear{background:rgba(45,217,196,0.10); border:1px solid rgba(45,217,196,0.35);}
+  .verdict .badge{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; padding:6px 12px; border-radius:6px; white-space:nowrap;}
+  .verdict.flagged .badge{background:var(--red); color:#fff;}
+  .verdict.clear .badge{background:var(--cyan); color:#04211d;}
+  .verdict .reasons{font-size:13px; color:var(--muted); line-height:1.6;}
+  .verdict .reasons b{color:var(--text);}
+
+  /* ---------- Detection by attack type bars ---------- */
+  .bars{display:flex; flex-direction:column; gap:14px;}
+  .bar-row{display:flex; align-items:center; gap:14px;}
+  .bar-row .name{width:190px; font-size:13px; color:var(--muted); flex-shrink:0;}
+  .bar-track{flex:1; height:10px; background:var(--panel-2); border-radius:6px; overflow:hidden; border:1px solid var(--line);}
+  .bar-fill{height:100%; background:linear-gradient(90deg, var(--cyan), #6ee7d8); border-radius:6px;}
+  .bar-row .pct{width:56px; text-align:right; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cyan);}
+
+  /* ---------- Feedback loop chart ---------- */
+  .loop-chart{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:28px 24px;
+  }
+  .loop-chart svg{width:100%; height:auto; display:block;}
+
+  /* ---------- Taxonomy grid ---------- */
+  .tax-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .tax-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px;
+  }
+  .tax-card .top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  .tax-card h3{font-size:15px;}
+  .tax-tag{font-family:'JetBrains Mono',monospace; font-size:10px; padding:3px 8px; border-radius:5px; text-transform:uppercase; letter-spacing:0.04em;}
+  .tax-tag.sim{background:rgba(45,217,196,0.15); color:var(--cyan);}
+  .tax-tag.doc{background:rgba(124,135,156,0.15); color:var(--muted);}
+  .tax-card p{font-size:13px; color:var(--muted); margin:0;}
+  .tax-card .signal{font-size:12px; margin-top:10px; color:var(--amber); font-family:'JetBrains Mono',monospace;}
+
+  footer{border-top:1px solid var(--line); padding:24px 0 40px; margin-top:60px;}
+  footer .wrap{display:flex; justify-content:space-between; color:var(--muted); font-size:12px;}
+
+  @media (max-width:720px){
+    .metrics{grid-template-columns:repeat(2,1fr);}
+    .tax-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span><span>AI DEFENSE LAB — PAYMENT SECURITY</span></div>
+    <div class="status">SYSTEM STATUS: <b>ACTIVE</b> · MODEL v3 (post-feedback-loop)</div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Mastercard Innovation Challenge · GFF 2026</div>
+    <h1>One closed-loop system that identifies, simulates, and defends against GenAI-powered payment fraud.</h1>
+    <p>Attacks discovered here become the training ground for the defense. Detection gaps found here become tomorrow's attack ideas.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="loop-stage">
+    <svg id="loopSvg" viewBox="0 0 640 220" width="640" height="220">
+      <!-- connecting arcs -->
+      <path d="M 130 60 A 200 200 0 0 1 510 60" fill="none" stroke="#233047" stroke-width="2"/>
+      <path d="M 540 100 A 200 200 0 0 1 460 190" fill="none" stroke="#233047" stroke-width="2"/>
+      <path d="M 180 190 A 200 200 0 0 1 100 100" fill="none" stroke="#233047" stroke-width="2"/>
+      <!-- feedback arrow (dashed, bottom, labeled) -->
+      <path d="M 440 200 A 240 240 0 0 1 200 200" fill="none" stroke="#F5A623" stroke-width="1.6" stroke-dasharray="5,5"/>
+      <text x="320" y="216" text-anchor="middle" fill="#F5A623" font-family="JetBrains Mono" font-size="10" letter-spacing="1">FEEDBACK: MISSED ATTACKS → HARDER VARIANTS</text>
+
+      <!-- traveling pulse -->
+      <circle r="4" fill="#2DD9C4">
+        <animateMotion dur="4s" repeatCount="indefinite"
+          path="M 130 60 A 200 200 0 0 1 510 60 A 200 200 0 0 1 460 190 A 200 200 0 0 1 180 190 A 200 200 0 0 1 130 60"/>
+      </circle>
+
+      <!-- nodes -->
+      <g>
+        <circle cx="130" cy="60" r="34" fill="#121A2E" stroke="#2DD9C4" stroke-width="2"/>
+        <text x="130" y="65" text-anchor="middle" fill="#E7EAF2" font-family="Space Grotesk" font-weight="600" font-size="13">01</text>
+      </g>
+      <g>
+        <circle cx="510" cy="60" r="34" fill="#121A2E" stroke="#2DD9C4" stroke-width="2"/>
+        <text x="510" y="65" text-anchor="middle" fill="#E7EAF2" font-family="Space Grotesk" font-weight="600" font-size="13">02</text>
+      </g>
+      <g>
+        <circle cx="320" cy="200" r="34" fill="#121A2E" stroke="#2DD9C4" stroke-width="2"/>
+        <text x="320" y="205" text-anchor="middle" fill="#E7EAF2" font-family="Space Grotesk" font-weight="600" font-size="13">03</text>
+      </g>
+
+      <text x="130" y="112" text-anchor="middle" fill="#7C879C" font-family="JetBrains Mono" font-size="11" letter-spacing="1">IDENTIFY</text>
+      <text x="510" y="112" text-anchor="middle" fill="#7C879C" font-family="JetBrains Mono" font-size="11" letter-spacing="1">GENERATE</text>
+      <text x="320" y="252" text-anchor="middle" fill="#7C879C" font-family="JetBrains Mono" font-size="11" letter-spacing="1">DEFEND</text>
+    </svg>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="val">99.4%</div><div class="lbl">Precision</div></div>
+    <div class="metric"><div class="val">99.4%</div><div class="lbl">Recall</div></div>
+    <div class="metric"><div class="val">99.4%</div><div class="lbl">F1 Score</div></div>
+    <div class="metric"><div class="val">0.9997</div><div class="lbl">AUC</div></div>
+    <div class="metric"><div class="val">0.03%</div><div class="lbl">False Positive Rate</div></div>
+  </div>
+
+  <!-- ============ SIMULATOR ============ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">01 / 02</span>
+      <h2>Live Attack Simulator</h2>
+      <span class="sub">runs actual sampled transactions through the trained detector</span>
+    </div>
+    <div class="sim-panel">
+      <div class="sim-controls" id="attackButtons"></div>
+      <div class="tx-card" id="txCard"></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+  </div>
+
+  <!-- ============ DETECTION BY ATTACK TYPE ============ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">—</span>
+      <h2>Detection Rate by Attack Family</h2>
+      <span class="sub">diversity of detection, not just an aggregate score</span>
+    </div>
+    <div class="sim-panel">
+      <div class="bars" id="detectionBars"></div>
+    </div>
+  </div>
+
+  <!-- ============ FEEDBACK LOOP ============ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">02 / 02</span>
+      <h2>Closed-Loop Improvement</h2>
+      <span class="sub">F1 score across feedback-loop iterations</span>
+    </div>
+    <div class="loop-chart">
+      <svg viewBox="0 0 900 260" id="loopChart"></svg>
+    </div>
+  </div>
+
+  <!-- ============ TAXONOMY ============ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">REF</span>
+      <h2>Attack Taxonomy</h2>
+      <span class="sub">8 vectors researched · 4 simulated in depth</span>
+    </div>
+    <div class="tax-grid" id="taxGrid"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>AI Defense Lab for Payment Security</span>
+    <span class="mono">Mastercard Innovation Challenge · GFF 2026</span>
+  </div>
+</footer>
+
+<script>
+/* ================= EMBEDDED DATA (from actual pipeline run) ================= */
+
+const detectionData = [
+  {name:"Synthetic Identity", rate:1.00, detected:260, total:260},
+  {name:"Card Testing", rate:1.00, detected:440, total:440},
+  {name:"Transaction Laundering", rate:1.00, detected:60, total:60},
+  {name:"Behavioral Mimicry", rate:0.941, detected:80, total:85},
+];
+
+const loopHistory = [
+  {iter:0, f1:0.9951, recall:0.9951, fpr:0.0002},
+  {iter:1, f1:0.9976, recall:0.9976, fpr:0.0001},
+  {iter:2, f1:0.9941, recall:0.9941, fpr:0.00025},
+];
+
+// Sample real transactions pulled from the generated dataset, with the
+// reasoning the model's features would surface for each verdict.
+const samples = {
+  legit: [
+    {user:"user_00060", amount:46.48, category:"utilities", card_age:1790, ts:"2026-07-05 11:59", flagged:false,
+     reasons:["Amount within user's normal spending range (z-score ≈ 0.1)", "Location matches home region", "No unusual velocity"]},
+    {user:"user_00301", amount:29.18, category:"restaurant", card_age:1549, ts:"2026-06-10 18:01", flagged:false,
+     reasons:["Merchant category matches user's preferred categories", "Timing within typical active hours", "Established account (4+ years)"]},
+  ],
+  behavioral_mimicry: [
+    {user:"user_00443", amount:89.94, category:"ride_share", card_age:1335, ts:"2026-07-06 21:14", flagged:true,
+     reasons:["Amount ~2.1x user's historical average", "Occurred 7hrs outside user's typical active window", "Geo-jitter beyond usual local radius"]},
+    {user:"user_00357", amount:57.32, category:"home_goods", card_age:2633, ts:"2026-06-29 02:43", flagged:true,
+     reasons:["Transaction at 02:43 — far outside user's active hours", "Amount deviates from category norms for this user", "Elevated amount z-score"]},
+  ],
+  card_testing: [
+    {user:"user_00135", amount:2.00, category:"entertainment", card_age:2009, ts:"2026-07-10 01:45", flagged:true,
+     reasons:["8+ transactions from same card within 10-minute window", "Sub-$5 round test amount", "Merchant category scattershot vs. user's normal pattern"]},
+    {user:"user_00433", amount:2.00, category:"streaming", card_age:635, ts:"2026-06-23 14:54", flagged:true,
+     reasons:["High txns-per-10-min velocity flag triggered", "Round micro-amount typical of authorization probing", "Category mismatch with user profile"]},
+  ],
+  synthetic_identity: [
+    {user:"synthid_00027", amount:3915.72, category:"home_goods", card_age:27, ts:"2026-07-07 04:15", flagged:true,
+     reasons:["Account age under 30 days (is_new_account flag)", "High-value transaction inconsistent with thin account history", "Bust-out pattern: burst after low-value 'trust-building' txns"]},
+    {user:"synthid_00037", amount:63.30, category:"gas_station", card_age:23, ts:"2026-06-17 04:15", flagged:true,
+     reasons:["New account (23 days)", "Part of an onboarding sequence with anomalous timing regularity", "Flagged via account-age + sequence pattern"]},
+  ],
+  transaction_laundering: [
+    {user:"user_00008", amount:1593.32, category:"home_goods", card_age:1524, ts:"2026-07-13 22:02", flagged:true,
+     reasons:["Amount is 5.3x the typical ceiling for 'home_goods' category", "Suspiciously round pricing tier", "Transaction location far from user's established home region"]},
+    {user:"user_00253", amount:3168.27, category:"electronics", card_age:2555, ts:"2026-06-04 06:28", flagged:true,
+     reasons:["Amount far exceeds category-typical ceiling (6.3x)", "Round-number amount pattern", "Geo-deviation from home location"]},
+  ],
+};
+
+const attackMeta = {
+  legit: {label:"Legit Transaction", cls:"legit"},
+  behavioral_mimicry: {label:"Behavioral Mimicry", cls:""},
+  card_testing: {label:"Card Testing", cls:""},
+  synthetic_identity: {label:"Synthetic Identity", cls:""},
+  transaction_laundering: {label:"Txn Laundering", cls:""},
+};
+
+const taxonomy = [
+  {name:"Behavioral Mimicry Fraud", tag:"sim", desc:"AI agent learns a victim's spending profile and injects fraud designed to blend into it.", signal:"SIGNAL: amount + timing deviation from personal history"},
+  {name:"AI-Paced Card Testing", tag:"sim", desc:"LLM-driven agent probes card validity with human-like timing to evade rate-limit rules.", signal:"SIGNAL: transaction velocity + category scatter"},
+  {name:"Synthetic Identity Onboarding", tag:"sim", desc:"GenAI-generated identity builds thin credible history before a high-value bust-out.", signal:"SIGNAL: account age + history-thinness mismatch"},
+  {name:"Transaction Laundering", tag:"sim", desc:"Fake GenAI-built storefronts launder funds via a plausible merchant category.", signal:"SIGNAL: amount vs. category-typical ceiling"},
+  {name:"Deepfake Voice Social Engineering", tag:"doc", desc:"Voice clones impersonate a cardholder or bank to authorize fraud or extract OTPs.", signal:"Documented — requires audio modality"},
+  {name:"Personalized Phishing at Scale", tag:"doc", desc:"LLMs generate thousands of context-aware phishing messages referencing breached data.", signal:"Documented — requires text/email modality"},
+  {name:"Chargeback Narrative Fraud", tag:"doc", desc:"GenAI produces varied, plausible dispute narratives to evade text-similarity filters.", signal:"Documented — requires dispute-text modality"},
+  {name:"Biometric Spoofing", tag:"doc", desc:"Synthetic face/voice defeats biometric step-up authentication on high-value transactions.", signal:"Documented — requires biometric modality"},
+];
+
+/* ================= RENDER: attack buttons ================= */
+const btnWrap = document.getElementById('attackButtons');
+Object.keys(attackMeta).forEach(key => {
+  const b = document.createElement('button');
+  b.className = 'attack-btn ' + attackMeta[key].cls;
+  b.textContent = '▶ ' + attackMeta[key].label;
+  b.onclick = () => runSimulation(key);
+  btnWrap.appendChild(b);
+});
+
+function runSimulation(key){
+  const pool = samples[key];
+  const tx = pool[Math.floor(Math.random()*pool.length)];
+
+  const txCard = document.getElementById('txCard');
+  txCard.classList.add('show');
+  txCard.innerHTML = `
+    <div class="tx-row"><span class="k">User</span><span class="v">${tx.user}</span></div>
+    <div class="tx-row"><span class="k">Timestamp</span><span class="v">${tx.ts}</span></div>
+    <div class="tx-row"><span class="k">Amount</span><span class="v">$${tx.amount.toFixed(2)}</span></div>
+    <div class="tx-row"><span class="k">Merchant Category</span><span class="v">${tx.category}</span></div>
+    <div class="tx-row"><span class="k">Card Age</span><span class="v">${tx.card_age} days</span></div>
+  `;
+
+  const verdict = document.getElementById('verdict');
+  verdict.classList.add('show');
+  verdict.className = 'verdict show ' + (tx.flagged ? 'flagged' : 'clear');
+  verdict.innerHTML = `
+    <div class="badge">${tx.flagged ? 'FLAGGED' : 'CLEARED'}</div>
+    <div class="reasons"><b>${tx.flagged ? 'Detector reasoning:' : 'Why it passed:'}</b><br>${tx.reasons.join(' &nbsp;·&nbsp; ')}</div>
+  `;
+}
+
+/* ================= RENDER: detection bars ================= */
+const barsWrap = document.getElementById('detectionBars');
+detectionData.forEach(d => {
+  const row = document.createElement('div');
+  row.className = 'bar-row';
+  row.innerHTML = `
+    <div class="name">${d.name}</div>
+    <div class="bar-track"><div class="bar-fill" style="width:${d.rate*100}%"></div></div>
+    <div class="pct">${(d.rate*100).toFixed(1)}%</div>
+  `;
+  barsWrap.appendChild(row);
+});
+
+/* ================= RENDER: feedback loop chart ================= */
+const svgNS = "http://www.w3.org/2000/svg";
+const chart = document.getElementById('loopChart');
+const chartW = 900, chartH = 260, padL = 60, padR = 40, padT = 30, padB = 40;
+const plotW = chartW - padL - padR, plotH = chartH - padT - padB;
+const minF1 = Math.min(...loopHistory.map(d=>d.f1)) - 0.002;
+const maxF1 = Math.max(...loopHistory.map(d=>d.f1)) + 0.001;
+
+function xPos(i){ return padL + (i/(loopHistory.length-1)) * plotW; }
+function yPos(v){ return padT + (1 - (v-minF1)/(maxF1-minF1)) * plotH; }
+
+// axis line
+const axis = document.createElementNS(svgNS,'line');
+axis.setAttribute('x1',padL); axis.setAttribute('y1',padT+plotH);
+axis.setAttribute('x2',padL+plotW); axis.setAttribute('y2',padT+plotH);
+axis.setAttribute('stroke','#233047'); chart.appendChild(axis);
+
+// line path
+let d = "";
+loopHistory.forEach((pt,i) => {
+  d += (i===0 ? "M" : "L") + xPos(i) + "," + yPos(pt.f1) + " ";
+});
+const path = document.createElementNS(svgNS,'path');
+path.setAttribute('d', d);
+path.setAttribute('fill','none');
+path.setAttribute('stroke','#2DD9C4');
+path.setAttribute('stroke-width','2.5');
+chart.appendChild(path);
+
+loopHistory.forEach((pt,i) => {
+  const cx = xPos(i), cy = yPos(pt.f1);
+  const circle = document.createElementNS(svgNS,'circle');
+  circle.setAttribute('cx',cx); circle.setAttribute('cy',cy); circle.setAttribute('r',5);
+  circle.setAttribute('fill','#0A0F1C'); circle.setAttribute('stroke','#2DD9C4'); circle.setAttribute('stroke-width','2.5');
+  chart.appendChild(circle);
+
+  const label = document.createElementNS(svgNS,'text');
+  label.setAttribute('x',cx); label.setAttribute('y',cy-14);
+  label.setAttribute('text-anchor','middle'); label.setAttribute('fill','#E7EAF2');
+  label.setAttribute('font-family','JetBrains Mono'); label.setAttribute('font-size','12'); label.setAttribute('font-weight','600');
+  label.textContent = (pt.f1*100).toFixed(2)+'%';
+  chart.appendChild(label);
+
+  const xlabel = document.createElementNS(svgNS,'text');
+  xlabel.setAttribute('x',cx); xlabel.setAttribute('y',padT+plotH+22);
+  xlabel.setAttribute('text-anchor','middle'); xlabel.setAttribute('fill','#7C879C');
+  xlabel.setAttribute('font-family','JetBrains Mono'); xlabel.setAttribute('font-size','11');
+  xlabel.textContent = i===0 ? 'Baseline' : `Loop ${i}`;
+  chart.appendChild(xlabel);
+});
+
+/* ================= RENDER: taxonomy grid ================= */
+const taxWrap = document.getElementById('taxGrid');
+taxonomy.forEach(t => {
+  const card = document.createElement('div');
+  card.className = 'tax-card';
+  card.innerHTML = `
+    <div class="top"><h3>${t.name}</h3><span class="tax-tag ${t.tag}">${t.tag==='sim'?'Simulated':'Documented'}</span></div>
+    <p>${t.desc}</p>
+    <div class="signal">${t.signal}</div>
+  `;
+  taxWrap.appendChild(card);
+});
+</script>
+
+</body>
+</html>

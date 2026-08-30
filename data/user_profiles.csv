@@ -1,0 +1,501 @@
+user_id,home_city,home_lat,home_lon,preferred_categories,avg_spend,active_hour_center,card_age_days
+user_00000,Los Angeles,34.0522,-118.2437,"['entertainment', 'clothing', 'electronics']",44.61314255803931,11,601
+user_00001,Los Angeles,34.0522,-118.2437,"['home_goods', 'streaming', 'grocery']",30.479106597928702,8,413
+user_00002,Houston,29.7604,-95.3698,"['travel', 'home_goods', 'grocery', 'entertainment']",48.843100149886624,11,2962
+user_00003,Delhi,28.7041,77.1025,"['ride_share', 'home_goods', 'clothing', 'grocery']",82.58416159074523,20,683
+user_00004,Delhi,28.7041,77.1025,"['clothing', 'gas_station', 'electronics', 'pharmacy', 'restaurant']",28.775029366572934,9,1586
+user_00005,Los Angeles,34.0522,-118.2437,"['pharmacy', 'home_goods', 'clothing', 'grocery', 'ride_share']",28.77531282112912,16,541
+user_00006,Delhi,28.7041,77.1025,"['travel', 'clothing', 'home_goods']",85.41550906683793,22,1511
+user_00007,Houston,29.7604,-95.3698,"['grocery', 'utilities', 'electronics']",52.481505822681314,20,1215
+user_00008,Los Angeles,34.0522,-118.2437,"['restaurant', 'streaming', 'clothing', 'ride_share']",24.98599251492989,18,1524
+user_00009,Chicago,41.8781,-87.6298,"['pharmacy', 'electronics', 'clothing', 'restaurant', 'gas_station']",45.85737453153911,16,1032
+user_00010,Chicago,41.8781,-87.6298,"['streaming', 'clothing', 'travel', 'electronics', 'pharmacy', 'entertainment']",25.076957191776795,20,259
+user_00011,Houston,29.7604,-95.3698,"['pharmacy', 'streaming', 'clothing']",25.042193640795595,9,894
+user_00012,Bengaluru,12.9716,77.5946,"['utilities', 'ride_share', 'streaming', 'entertainment']",38.28956339886567,10,1114
+user_00013,Chicago,41.8781,-87.6298,"['entertainment', 'travel', 'utilities', 'clothing']",10.506896522306214,19,2424
+user_00014,Delhi,28.7041,77.1025,"['pharmacy', 'electronics', 'gas_station', 'travel', 'ride_share', 'grocery']",11.764062111736244,20,222
+user_00015,Los Angeles,34.0522,-118.2437,"['utilities', 'gas_station', 'streaming', 'restaurant']",23.63260868937906,14,1593
+user_00016,London,51.5074,-0.1278,"['travel', 'grocery', 'restaurant', 'entertainment', 'clothing']",18.034765788980515,20,2655
+user_00017,Bengaluru,12.9716,77.5946,"['clothing', 'streaming', 'gas_station']",39.986760009429645,15,43
+user_00018,Mumbai,19.076,72.8777,"['travel', 'restaurant', 'clothing', 'entertainment']",19.20528602007086,17,844
+user_00019,Chicago,41.8781,-87.6298,"['gas_station', 'travel', 'utilities', 'grocery', 'pharmacy']",14.191139332838121,15,109
+user_00020,Los Angeles,34.0522,-118.2437,"['clothing', 'electronics', 'grocery', 'utilities', 'restaurant']",79.78928811940821,9,2020
+user_00021,Los Angeles,34.0522,-118.2437,"['gas_station', 'utilities', 'ride_share', 'travel']",28.920023784324307,10,1115
+user_00022,Delhi,28.7041,77.1025,"['travel', 'electronics', 'clothing', 'streaming']",34.484740533404924,18,2691
+user_00023,Bengaluru,12.9716,77.5946,"['travel', 'ride_share', 'restaurant', 'electronics', 'entertainment', 'grocery']",14.085573087258972,13,116
+user_00024,Houston,29.7604,-95.3698,"['grocery', 'restaurant', 'entertainment', 'electronics']",23.887859646183006,9,158
+user_00025,Bengaluru,12.9716,77.5946,"['travel', 'electronics', 'clothing']",35.39439781582137,18,2018
+user_00026,Houston,29.7604,-95.3698,"['entertainment', 'home_goods', 'utilities', 'ride_share']",16.600019225867538,11,1967
+user_00027,Delhi,28.7041,77.1025,"['restaurant', 'entertainment', 'streaming', 'pharmacy']",41.48860499118494,14,1713
+user_00028,London,51.5074,-0.1278,"['utilities', 'entertainment', 'restaurant']",23.095014830831957,8,1679
+user_00029,Bengaluru,12.9716,77.5946,"['electronics', 'entertainment', 'utilities']",27.79854691606,16,1867
+user_00030,Chicago,41.8781,-87.6298,"['gas_station', 'clothing', 'ride_share', 'electronics', 'restaurant', 'travel']",23.080221361859984,20,2284
+user_00031,Los Angeles,34.0522,-118.2437,"['utilities', 'travel', 'grocery']",100.62159641358114,9,998
+user_00032,Chicago,41.8781,-87.6298,"['ride_share', 'entertainment', 'electronics', 'streaming', 'grocery', 'restaurant']",32.84835492063741,14,38
+user_00033,Delhi,28.7041,77.1025,"['ride_share', 'clothing', 'streaming', 'travel', 'entertainment']",17.55560799294971,10,807
+user_00034,Mumbai,19.076,72.8777,"['grocery', 'home_goods', 'travel', 'entertainment']",54.24587470699921,19,1314
+user_00035,New York,40.7128,-74.006,"['home_goods', 'ride_share', 'travel']",15.918688717256483,22,2205
+user_00036,Chicago,41.8781,-87.6298,"['travel', 'restaurant', 'gas_station']",37.5366638124548,9,2467
+user_00037,Los Angeles,34.0522,-118.2437,"['streaming', 'restaurant', 'home_goods', 'electronics']",10.218480816886009,17,2465
+user_00038,New York,40.7128,-74.006,"['streaming', 'utilities', 'home_goods']",14.925756886571687,17,2171
+user_00039,Bengaluru,12.9716,77.5946,"['electronics', 'utilities', 'pharmacy', 'entertainment', 'clothing']",37.267317701215866,14,566
+user_00040,Mumbai,19.076,72.8777,"['pharmacy', 'restaurant', 'grocery', 'ride_share', 'utilities', 'home_goods']",51.57721204967042,16,903
+user_00041,Mumbai,19.076,72.8777,"['pharmacy', 'restaurant', 'electronics', 'entertainment']",36.70162267695387,12,676
+user_00042,London,51.5074,-0.1278,"['home_goods', 'utilities', 'travel', 'grocery', 'clothing']",30.89551508740559,22,2747
+user_00043,Los Angeles,34.0522,-118.2437,"['clothing', 'restaurant', 'utilities', 'travel']",27.642039458004408,10,1145
+user_00044,Mumbai,19.076,72.8777,"['entertainment', 'pharmacy', 'electronics', 'clothing']",13.638365389841285,16,2031
+user_00045,Mumbai,19.076,72.8777,"['restaurant', 'utilities', 'streaming']",21.500871624003114,21,1163
+user_00046,New York,40.7128,-74.006,"['pharmacy', 'gas_station', 'clothing']",25.11880421156462,10,1839
+user_00047,Delhi,28.7041,77.1025,"['restaurant', 'entertainment', 'gas_station']",62.44419861200828,16,177
+user_00048,Bengaluru,12.9716,77.5946,"['streaming', 'gas_station', 'grocery', 'clothing']",40.697675334997435,13,193
+user_00049,Bengaluru,12.9716,77.5946,"['utilities', 'electronics', 'restaurant', 'pharmacy']",11.498032189630392,20,2323
+user_00050,Delhi,28.7041,77.1025,"['electronics', 'gas_station', 'utilities', 'streaming']",40.22345895982762,8,764
+user_00051,Bengaluru,12.9716,77.5946,"['utilities', 'electronics', 'clothing', 'gas_station', 'restaurant', 'entertainment']",26.283743540761424,21,188
+user_00052,London,51.5074,-0.1278,"['electronics', 'ride_share', 'pharmacy', 'clothing']",22.061782210950838,21,962
+user_00053,Houston,29.7604,-95.3698,"['utilities', 'electronics', 'streaming']",47.79905040541232,13,1171
+user_00054,Los Angeles,34.0522,-118.2437,"['pharmacy', 'utilities', 'travel', 'streaming', 'entertainment']",61.473102012976916,8,502
+user_00055,Mumbai,19.076,72.8777,"['home_goods', 'clothing', 'grocery', 'restaurant']",57.902934845354,17,1809
+user_00056,Bengaluru,12.9716,77.5946,"['streaming', 'home_goods', 'travel', 'restaurant', 'entertainment']",20.014749686407185,22,2391
+user_00057,Houston,29.7604,-95.3698,"['grocery', 'streaming', 'entertainment', 'travel', 'electronics']",27.507881799249446,13,1796
+user_00058,Los Angeles,34.0522,-118.2437,"['home_goods', 'pharmacy', 'restaurant', 'clothing', 'travel']",40.39710236847056,18,1702
+user_00059,Bengaluru,12.9716,77.5946,"['entertainment', 'clothing', 'travel', 'gas_station', 'electronics', 'ride_share']",59.46138297859105,18,1582
+user_00060,Chicago,41.8781,-87.6298,"['streaming', 'travel', 'grocery', 'clothing', 'utilities']",24.840998593724002,11,1790
+user_00061,Bengaluru,12.9716,77.5946,"['ride_share', 'entertainment', 'electronics', 'travel', 'utilities', 'streaming']",29.624585683834738,22,725
+user_00062,Los Angeles,34.0522,-118.2437,"['travel', 'utilities', 'home_goods', 'pharmacy', 'restaurant']",17.050832262641897,21,992
+user_00063,Mumbai,19.076,72.8777,"['electronics', 'gas_station', 'grocery', 'home_goods']",16.15575003388533,11,1976
+user_00064,Los Angeles,34.0522,-118.2437,"['streaming', 'utilities', 'home_goods', 'electronics', 'entertainment', 'travel']",53.9207563321111,14,1029
+user_00065,Chicago,41.8781,-87.6298,"['restaurant', 'streaming', 'electronics']",74.71971779967375,10,2880
+user_00066,London,51.5074,-0.1278,"['travel', 'electronics', 'restaurant']",31.71513231417576,15,576
+user_00067,London,51.5074,-0.1278,"['ride_share', 'home_goods', 'travel', 'streaming', 'entertainment']",60.468328901388084,22,681
+user_00068,London,51.5074,-0.1278,"['clothing', 'electronics', 'entertainment', 'travel', 'ride_share', 'pharmacy']",41.14003006527806,11,1154
+user_00069,London,51.5074,-0.1278,"['entertainment', 'clothing', 'electronics']",22.486792733379207,12,1405
+user_00070,Bengaluru,12.9716,77.5946,"['gas_station', 'entertainment', 'electronics']",41.134095973046776,14,2872
+user_00071,Chicago,41.8781,-87.6298,"['restaurant', 'streaming', 'utilities', 'pharmacy']",83.33110925346675,16,1938
+user_00072,Delhi,28.7041,77.1025,"['electronics', 'streaming', 'utilities']",32.411210840142346,22,2422
+user_00073,New York,40.7128,-74.006,"['ride_share', 'grocery', 'pharmacy', 'clothing', 'streaming', 'entertainment']",84.67210372291747,22,1746
+user_00074,Houston,29.7604,-95.3698,"['electronics', 'clothing', 'streaming', 'ride_share', 'grocery', 'entertainment']",6.876796630919651,13,2769
+user_00075,Delhi,28.7041,77.1025,"['ride_share', 'gas_station', 'home_goods', 'travel']",54.22496995459717,8,1643
+user_00076,New York,40.7128,-74.006,"['utilities', 'streaming', 'gas_station']",34.890976436278926,21,1921
+user_00077,Chicago,41.8781,-87.6298,"['clothing', 'streaming', 'pharmacy']",27.676829685886563,11,1892
+user_00078,Bengaluru,12.9716,77.5946,"['streaming', 'clothing', 'entertainment', 'utilities', 'restaurant']",34.98979564296102,15,109
+user_00079,New York,40.7128,-74.006,"['electronics', 'utilities', 'restaurant', 'grocery', 'travel']",10.048854533463766,11,846
+user_00080,New York,40.7128,-74.006,"['electronics', 'gas_station', 'ride_share', 'restaurant']",29.026141857645456,17,922
+user_00081,London,51.5074,-0.1278,"['pharmacy', 'gas_station', 'home_goods', 'restaurant', 'utilities']",41.02852444219797,12,472
+user_00082,New York,40.7128,-74.006,"['home_goods', 'utilities', 'streaming', 'entertainment', 'electronics']",80.37767205399278,9,2455
+user_00083,Houston,29.7604,-95.3698,"['entertainment', 'clothing', 'home_goods']",24.265070033225573,20,525
+user_00084,New York,40.7128,-74.006,"['travel', 'streaming', 'pharmacy', 'restaurant', 'home_goods']",20.387130384437437,8,1750
+user_00085,London,51.5074,-0.1278,"['streaming', 'pharmacy', 'ride_share']",24.506680990081247,19,656
+user_00086,Delhi,28.7041,77.1025,"['entertainment', 'travel', 'clothing', 'utilities']",57.35392442534725,20,2010
+user_00087,London,51.5074,-0.1278,"['entertainment', 'home_goods', 'clothing', 'pharmacy', 'electronics', 'streaming']",40.336253930046844,22,384
+user_00088,Mumbai,19.076,72.8777,"['electronics', 'ride_share', 'home_goods', 'streaming', 'pharmacy', 'grocery']",24.09836215321726,15,1361
+user_00089,Chicago,41.8781,-87.6298,"['electronics', 'pharmacy', 'clothing', 'utilities', 'home_goods', 'ride_share']",45.058446577145396,19,1161
+user_00090,New York,40.7128,-74.006,"['restaurant', 'electronics', 'streaming', 'ride_share']",35.10159354588138,16,1014
+user_00091,London,51.5074,-0.1278,"['ride_share', 'grocery', 'restaurant', 'clothing', 'electronics', 'entertainment']",59.21571686979096,19,1026
+user_00092,Mumbai,19.076,72.8777,"['ride_share', 'travel', 'utilities', 'pharmacy', 'streaming']",21.7316156726375,19,2284
+user_00093,Bengaluru,12.9716,77.5946,"['entertainment', 'ride_share', 'clothing', 'home_goods', 'travel']",27.205052562925143,11,524
+user_00094,Houston,29.7604,-95.3698,"['restaurant', 'travel', 'gas_station', 'electronics', 'utilities']",26.173177010440543,19,2013
+user_00095,Mumbai,19.076,72.8777,"['restaurant', 'electronics', 'clothing', 'utilities', 'pharmacy']",13.7617228407961,10,1268
+user_00096,New York,40.7128,-74.006,"['clothing', 'grocery', 'utilities', 'travel']",39.554211192775156,12,2886
+user_00097,Chicago,41.8781,-87.6298,"['restaurant', 'grocery', 'home_goods', 'clothing', 'ride_share', 'electronics']",38.730723087378614,15,1425
+user_00098,Chicago,41.8781,-87.6298,"['clothing', 'ride_share', 'restaurant']",33.217208634048056,21,297
+user_00099,Delhi,28.7041,77.1025,"['restaurant', 'home_goods', 'grocery', 'gas_station', 'travel', 'streaming']",28.76754149022823,17,1274
+user_00100,Los Angeles,34.0522,-118.2437,"['restaurant', 'travel', 'streaming', 'electronics']",14.165048465450116,20,2170
+user_00101,Delhi,28.7041,77.1025,"['ride_share', 'clothing', 'home_goods', 'streaming', 'utilities', 'entertainment']",25.728846808455888,17,276
+user_00102,Los Angeles,34.0522,-118.2437,"['utilities', 'electronics', 'clothing', 'restaurant']",26.96045843281146,10,1012
+user_00103,Chicago,41.8781,-87.6298,"['gas_station', 'grocery', 'streaming']",20.46331229081118,15,2853
+user_00104,London,51.5074,-0.1278,"['grocery', 'electronics', 'clothing', 'home_goods', 'ride_share']",30.06099766814307,9,2845
+user_00105,Houston,29.7604,-95.3698,"['utilities', 'home_goods', 'electronics', 'streaming', 'restaurant']",42.20043436880862,16,950
+user_00106,Chicago,41.8781,-87.6298,"['gas_station', 'restaurant', 'grocery', 'entertainment', 'clothing']",102.68967134283572,17,2361
+user_00107,Mumbai,19.076,72.8777,"['restaurant', 'ride_share', 'clothing', 'streaming', 'home_goods', 'utilities']",36.7723677842632,16,2052
+user_00108,London,51.5074,-0.1278,"['home_goods', 'grocery', 'streaming']",38.64936071110592,19,1350
+user_00109,Mumbai,19.076,72.8777,"['restaurant', 'electronics', 'home_goods']",31.668815247136365,17,114
+user_00110,Mumbai,19.076,72.8777,"['gas_station', 'ride_share', 'travel']",10.472337645897484,18,1841
+user_00111,Mumbai,19.076,72.8777,"['home_goods', 'streaming', 'ride_share', 'restaurant']",32.59280878853338,15,1455
+user_00112,Delhi,28.7041,77.1025,"['pharmacy', 'utilities', 'restaurant', 'gas_station', 'entertainment']",34.33406898105386,14,2871
+user_00113,London,51.5074,-0.1278,"['utilities', 'streaming', 'travel', 'grocery', 'ride_share']",145.17577759321668,9,1318
+user_00114,Mumbai,19.076,72.8777,"['restaurant', 'streaming', 'travel', 'grocery', 'ride_share']",29.505698705030696,14,252
+user_00115,Houston,29.7604,-95.3698,"['home_goods', 'ride_share', 'utilities', 'grocery', 'electronics']",39.683219090554445,12,2279
+user_00116,Chicago,41.8781,-87.6298,"['ride_share', 'entertainment', 'restaurant', 'grocery', 'electronics']",32.43288697761724,19,678
+user_00117,Mumbai,19.076,72.8777,"['travel', 'streaming', 'restaurant']",16.42481297053604,11,494
+user_00118,London,51.5074,-0.1278,"['utilities', 'gas_station', 'ride_share']",65.73908756622309,22,2965
+user_00119,Mumbai,19.076,72.8777,"['streaming', 'ride_share', 'utilities', 'electronics', 'home_goods']",51.995637436602976,16,622
+user_00120,Delhi,28.7041,77.1025,"['home_goods', 'travel', 'gas_station', 'restaurant']",53.22984143025724,12,1729
+user_00121,Bengaluru,12.9716,77.5946,"['grocery', 'clothing', 'utilities', 'ride_share', 'gas_station']",19.18958199076983,15,2236
+user_00122,London,51.5074,-0.1278,"['pharmacy', 'travel', 'utilities', 'streaming', 'ride_share']",76.83625403844562,22,1348
+user_00123,Houston,29.7604,-95.3698,"['home_goods', 'streaming', 'electronics', 'utilities']",14.280419915474262,8,1333
+user_00124,London,51.5074,-0.1278,"['streaming', 'utilities', 'gas_station', 'ride_share', 'grocery', 'restaurant']",47.092523716068,16,2447
+user_00125,Bengaluru,12.9716,77.5946,"['ride_share', 'restaurant', 'travel']",123.2572180472645,22,1901
+user_00126,New York,40.7128,-74.006,"['streaming', 'utilities', 'gas_station', 'restaurant']",18.277635431956128,15,1115
+user_00127,Bengaluru,12.9716,77.5946,"['utilities', 'restaurant', 'pharmacy', 'travel', 'streaming', 'gas_station']",23.575814146478756,18,2973
+user_00128,London,51.5074,-0.1278,"['home_goods', 'restaurant', 'electronics']",35.1558424434722,18,2833
+user_00129,Mumbai,19.076,72.8777,"['entertainment', 'restaurant', 'streaming', 'utilities']",24.481423550602333,20,2625
+user_00130,Los Angeles,34.0522,-118.2437,"['gas_station', 'clothing', 'grocery', 'home_goods', 'pharmacy', 'streaming']",13.060624511638359,8,1231
+user_00131,Bengaluru,12.9716,77.5946,"['streaming', 'gas_station', 'electronics', 'travel', 'entertainment']",34.50615744861283,17,2822
+user_00132,Chicago,41.8781,-87.6298,"['gas_station', 'restaurant', 'home_goods', 'streaming']",17.507297110553772,17,2828
+user_00133,Houston,29.7604,-95.3698,"['home_goods', 'gas_station', 'electronics', 'ride_share', 'clothing', 'entertainment']",43.99849630206028,12,2761
+user_00134,New York,40.7128,-74.006,"['clothing', 'utilities', 'travel', 'gas_station', 'restaurant', 'electronics']",19.07436829012689,13,2436
+user_00135,Mumbai,19.076,72.8777,"['entertainment', 'clothing', 'ride_share', 'utilities', 'electronics', 'home_goods']",83.92811368737962,21,2009
+user_00136,Los Angeles,34.0522,-118.2437,"['streaming', 'home_goods', 'pharmacy', 'clothing']",20.698226589537697,19,1239
+user_00137,New York,40.7128,-74.006,"['clothing', 'grocery', 'home_goods', 'utilities', 'ride_share', 'streaming']",27.296625603301198,22,1202
+user_00138,Houston,29.7604,-95.3698,"['electronics', 'utilities', 'entertainment', 'clothing', 'gas_station']",53.95283993356223,18,427
+user_00139,New York,40.7128,-74.006,"['ride_share', 'grocery', 'home_goods', 'pharmacy', 'gas_station']",15.823266341350777,9,1238
+user_00140,Bengaluru,12.9716,77.5946,"['gas_station', 'electronics', 'entertainment', 'travel', 'pharmacy', 'clothing']",37.95783584900062,16,1146
+user_00141,Chicago,41.8781,-87.6298,"['ride_share', 'clothing', 'pharmacy', 'restaurant', 'entertainment']",72.55070179690263,9,606
+user_00142,Houston,29.7604,-95.3698,"['travel', 'pharmacy', 'restaurant', 'streaming', 'grocery', 'gas_station']",12.622867616887506,16,536
+user_00143,London,51.5074,-0.1278,"['utilities', 'entertainment', 'clothing', 'streaming', 'pharmacy']",36.99490924182675,9,2794
+user_00144,Houston,29.7604,-95.3698,"['grocery', 'home_goods', 'travel', 'pharmacy', 'electronics', 'utilities']",38.70348611807173,9,2632
+user_00145,London,51.5074,-0.1278,"['utilities', 'streaming', 'restaurant', 'gas_station', 'grocery']",52.93653393406718,8,1276
+user_00146,London,51.5074,-0.1278,"['restaurant', 'electronics', 'travel']",15.765587737661638,10,1621
+user_00147,London,51.5074,-0.1278,"['utilities', 'travel', 'streaming', 'gas_station', 'home_goods']",14.995138253764532,18,435
+user_00148,London,51.5074,-0.1278,"['clothing', 'grocery', 'pharmacy', 'electronics', 'ride_share', 'travel']",45.29356363900824,11,1515
+user_00149,Los Angeles,34.0522,-118.2437,"['travel', 'utilities', 'pharmacy', 'grocery', 'streaming']",39.574730818605445,12,807
+user_00150,Los Angeles,34.0522,-118.2437,"['restaurant', 'utilities', 'electronics', 'grocery', 'travel', 'streaming']",38.486045082879286,13,1027
+user_00151,Chicago,41.8781,-87.6298,"['restaurant', 'travel', 'electronics', 'home_goods']",40.7668367322309,21,984
+user_00152,Bengaluru,12.9716,77.5946,"['home_goods', 'grocery', 'clothing', 'gas_station']",22.02074948015383,10,2242
+user_00153,Mumbai,19.076,72.8777,"['restaurant', 'utilities', 'grocery', 'gas_station']",38.06716952086395,8,1497
+user_00154,Houston,29.7604,-95.3698,"['grocery', 'gas_station', 'clothing', 'entertainment', 'utilities']",39.48194520438102,19,1754
+user_00155,Los Angeles,34.0522,-118.2437,"['ride_share', 'entertainment', 'pharmacy']",21.571848386243627,16,2461
+user_00156,Los Angeles,34.0522,-118.2437,"['travel', 'electronics', 'home_goods', 'grocery', 'clothing', 'utilities']",101.43971759122394,18,157
+user_00157,New York,40.7128,-74.006,"['streaming', 'entertainment', 'restaurant', 'ride_share', 'travel', 'grocery']",44.00484548645196,22,360
+user_00158,Bengaluru,12.9716,77.5946,"['restaurant', 'gas_station', 'clothing', 'travel']",16.20334822888881,19,1361
+user_00159,Delhi,28.7041,77.1025,"['ride_share', 'travel', 'home_goods', 'streaming', 'restaurant']",49.1035908329472,20,2904
+user_00160,Los Angeles,34.0522,-118.2437,"['streaming', 'ride_share', 'electronics', 'entertainment']",18.4523364230314,13,1887
+user_00161,Delhi,28.7041,77.1025,"['entertainment', 'restaurant', 'pharmacy', 'streaming', 'home_goods', 'ride_share']",53.10392073001119,12,1563
+user_00162,Chicago,41.8781,-87.6298,"['restaurant', 'entertainment', 'utilities', 'home_goods', 'streaming', 'grocery']",66.36417298617634,19,1556
+user_00163,Chicago,41.8781,-87.6298,"['home_goods', 'travel', 'utilities']",20.23857848481186,13,2774
+user_00164,Los Angeles,34.0522,-118.2437,"['pharmacy', 'utilities', 'streaming', 'grocery', 'clothing', 'ride_share']",59.02881281793271,12,1470
+user_00165,Los Angeles,34.0522,-118.2437,"['gas_station', 'utilities', 'ride_share', 'electronics']",42.42206196012834,21,473
+user_00166,Bengaluru,12.9716,77.5946,"['restaurant', 'clothing', 'home_goods', 'electronics', 'streaming']",54.230099519935514,21,2327
+user_00167,New York,40.7128,-74.006,"['grocery', 'gas_station', 'clothing', 'home_goods', 'pharmacy']",103.34529804002771,13,55
+user_00168,Chicago,41.8781,-87.6298,"['home_goods', 'utilities', 'streaming', 'restaurant']",28.58171364805643,10,2623
+user_00169,New York,40.7128,-74.006,"['entertainment', 'travel', 'electronics']",21.0680631991304,14,1749
+user_00170,London,51.5074,-0.1278,"['gas_station', 'pharmacy', 'clothing', 'utilities', 'restaurant']",19.419764618626957,22,245
+user_00171,Chicago,41.8781,-87.6298,"['home_goods', 'grocery', 'restaurant', 'clothing']",20.297826858678906,15,2741
+user_00172,Delhi,28.7041,77.1025,"['home_goods', 'ride_share', 'streaming', 'clothing', 'electronics', 'entertainment']",31.61839192896162,16,496
+user_00173,Bengaluru,12.9716,77.5946,"['restaurant', 'clothing', 'home_goods', 'ride_share', 'utilities', 'grocery']",40.63749590617694,11,1648
+user_00174,New York,40.7128,-74.006,"['electronics', 'clothing', 'entertainment']",39.0957779208914,20,592
+user_00175,Mumbai,19.076,72.8777,"['pharmacy', 'restaurant', 'grocery', 'ride_share', 'streaming']",54.39705135836408,10,559
+user_00176,Delhi,28.7041,77.1025,"['travel', 'entertainment', 'pharmacy', 'restaurant']",33.37480036490835,14,203
+user_00177,Delhi,28.7041,77.1025,"['ride_share', 'restaurant', 'pharmacy']",79.21141730280954,17,1788
+user_00178,Delhi,28.7041,77.1025,"['clothing', 'restaurant', 'streaming', 'grocery', 'pharmacy', 'utilities']",28.253176678223355,20,2561
+user_00179,London,51.5074,-0.1278,"['restaurant', 'streaming', 'entertainment', 'electronics', 'utilities']",169.37268098754276,17,1670
+user_00180,Los Angeles,34.0522,-118.2437,"['clothing', 'pharmacy', 'electronics', 'utilities', 'gas_station', 'grocery']",48.20199492372031,16,2623
+user_00181,Los Angeles,34.0522,-118.2437,"['pharmacy', 'entertainment', 'gas_station', 'electronics']",19.800465868785437,9,629
+user_00182,Mumbai,19.076,72.8777,"['gas_station', 'home_goods', 'entertainment', 'restaurant']",17.4173093358721,10,2602
+user_00183,London,51.5074,-0.1278,"['home_goods', 'entertainment', 'ride_share', 'pharmacy', 'travel', 'restaurant']",44.23354549795766,15,309
+user_00184,London,51.5074,-0.1278,"['utilities', 'clothing', 'entertainment', 'grocery', 'pharmacy', 'home_goods']",28.960195807532713,9,1301
+user_00185,London,51.5074,-0.1278,"['grocery', 'entertainment', 'pharmacy', 'clothing', 'restaurant', 'home_goods']",50.825606698639504,21,399
+user_00186,Delhi,28.7041,77.1025,"['home_goods', 'travel', 'grocery', 'ride_share', 'electronics', 'gas_station']",43.989130739068685,17,1978
+user_00187,Chicago,41.8781,-87.6298,"['ride_share', 'restaurant', 'pharmacy']",31.699555300386972,19,375
+user_00188,Chicago,41.8781,-87.6298,"['electronics', 'ride_share', 'utilities']",19.923974775194324,16,2171
+user_00189,Chicago,41.8781,-87.6298,"['pharmacy', 'clothing', 'streaming', 'home_goods', 'entertainment']",13.344331196480033,18,2478
+user_00190,New York,40.7128,-74.006,"['restaurant', 'pharmacy', 'entertainment', 'travel', 'streaming']",25.33257276567027,12,1062
+user_00191,Chicago,41.8781,-87.6298,"['restaurant', 'home_goods', 'gas_station', 'pharmacy', 'clothing']",55.35900160716219,18,2890
+user_00192,Delhi,28.7041,77.1025,"['home_goods', 'restaurant', 'clothing', 'travel']",37.65464223871318,14,2665
+user_00193,Bengaluru,12.9716,77.5946,"['utilities', 'entertainment', 'travel', 'restaurant']",15.682677084403096,18,2776
+user_00194,Delhi,28.7041,77.1025,"['grocery', 'pharmacy', 'clothing', 'gas_station', 'electronics']",36.74156059123321,13,2021
+user_00195,Houston,29.7604,-95.3698,"['gas_station', 'entertainment', 'restaurant', 'clothing']",41.72875367846007,21,444
+user_00196,New York,40.7128,-74.006,"['home_goods', 'gas_station', 'entertainment', 'streaming', 'utilities']",19.485791097095262,10,770
+user_00197,Chicago,41.8781,-87.6298,"['grocery', 'streaming', 'pharmacy', 'electronics', 'ride_share', 'clothing']",36.31515196076901,12,1868
+user_00198,Houston,29.7604,-95.3698,"['clothing', 'ride_share', 'electronics', 'pharmacy']",34.29245060845094,18,2366
+user_00199,London,51.5074,-0.1278,"['clothing', 'streaming', 'travel', 'home_goods', 'utilities', 'restaurant']",16.680123838968417,21,847
+user_00200,Chicago,41.8781,-87.6298,"['grocery', 'utilities', 'ride_share', 'pharmacy', 'restaurant']",41.045139159562666,19,2143
+user_00201,Los Angeles,34.0522,-118.2437,"['restaurant', 'gas_station', 'clothing', 'ride_share', 'utilities']",46.36156223543915,21,1821
+user_00202,Los Angeles,34.0522,-118.2437,"['ride_share', 'pharmacy', 'grocery', 'streaming']",63.42326474236522,8,1653
+user_00203,Bengaluru,12.9716,77.5946,"['streaming', 'restaurant', 'pharmacy', 'electronics']",62.31992706435722,8,1335
+user_00204,Los Angeles,34.0522,-118.2437,"['gas_station', 'entertainment', 'grocery', 'clothing', 'ride_share']",14.489125162132167,19,598
+user_00205,London,51.5074,-0.1278,"['home_goods', 'grocery', 'restaurant', 'utilities', 'clothing', 'entertainment']",18.864936286110314,21,642
+user_00206,Delhi,28.7041,77.1025,"['clothing', 'electronics', 'entertainment']",45.10626544829559,9,225
+user_00207,Houston,29.7604,-95.3698,"['utilities', 'home_goods', 'ride_share', 'restaurant', 'travel', 'streaming']",45.072466921895156,22,2077
+user_00208,New York,40.7128,-74.006,"['entertainment', 'gas_station', 'clothing', 'streaming']",45.10660155700989,8,2548
+user_00209,Bengaluru,12.9716,77.5946,"['home_goods', 'streaming', 'gas_station', 'restaurant']",334.1663404801319,16,1507
+user_00210,Los Angeles,34.0522,-118.2437,"['streaming', 'ride_share', 'grocery']",46.64353378425344,18,1614
+user_00211,Bengaluru,12.9716,77.5946,"['entertainment', 'grocery', 'pharmacy', 'restaurant', 'home_goods']",65.45346185674893,11,2721
+user_00212,Los Angeles,34.0522,-118.2437,"['gas_station', 'grocery', 'pharmacy', 'travel', 'home_goods']",58.697730188957436,21,2662
+user_00213,Chicago,41.8781,-87.6298,"['entertainment', 'ride_share', 'gas_station', 'home_goods', 'restaurant', 'pharmacy']",48.9517319700906,20,1904
+user_00214,New York,40.7128,-74.006,"['electronics', 'grocery', 'entertainment', 'utilities', 'pharmacy']",27.408096247034454,22,1300
+user_00215,Delhi,28.7041,77.1025,"['clothing', 'grocery', 'electronics', 'entertainment', 'pharmacy', 'streaming']",52.215612086847216,20,225
+user_00216,Bengaluru,12.9716,77.5946,"['restaurant', 'pharmacy', 'streaming', 'home_goods', 'ride_share']",20.82813821458347,22,1613
+user_00217,Bengaluru,12.9716,77.5946,"['ride_share', 'entertainment', 'pharmacy', 'travel']",28.72905086165705,12,368
+user_00218,Delhi,28.7041,77.1025,"['streaming', 'home_goods', 'gas_station']",24.748920485167158,16,1233
+user_00219,Bengaluru,12.9716,77.5946,"['restaurant', 'pharmacy', 'clothing']",34.78285119712417,12,1856
+user_00220,Delhi,28.7041,77.1025,"['entertainment', 'ride_share', 'pharmacy', 'utilities']",132.79348007337913,8,1474
+user_00221,Delhi,28.7041,77.1025,"['utilities', 'grocery', 'restaurant', 'streaming', 'pharmacy']",10.801023351880286,16,2812
+user_00222,Chicago,41.8781,-87.6298,"['gas_station', 'home_goods', 'ride_share']",49.98665722044254,8,547
+user_00223,Los Angeles,34.0522,-118.2437,"['utilities', 'pharmacy', 'entertainment', 'streaming']",12.583299235808868,17,162
+user_00224,Chicago,41.8781,-87.6298,"['pharmacy', 'entertainment', 'ride_share', 'restaurant', 'gas_station', 'clothing']",24.949178118841004,13,1660
+user_00225,Bengaluru,12.9716,77.5946,"['electronics', 'restaurant', 'grocery', 'gas_station', 'ride_share']",63.648156288419656,16,1615
+user_00226,Los Angeles,34.0522,-118.2437,"['clothing', 'ride_share', 'electronics', 'entertainment', 'utilities']",34.41759827939129,11,532
+user_00227,Chicago,41.8781,-87.6298,"['ride_share', 'gas_station', 'entertainment']",17.34584737287321,9,2823
+user_00228,Bengaluru,12.9716,77.5946,"['entertainment', 'restaurant', 'travel', 'home_goods', 'clothing']",21.5595262975775,22,1258
+user_00229,Chicago,41.8781,-87.6298,"['pharmacy', 'travel', 'electronics', 'restaurant']",49.787236169419906,11,598
+user_00230,Houston,29.7604,-95.3698,"['grocery', 'pharmacy', 'travel', 'utilities', 'ride_share', 'streaming']",21.365554468976963,16,561
+user_00231,Los Angeles,34.0522,-118.2437,"['clothing', 'streaming', 'ride_share']",37.70810860731423,16,1712
+user_00232,Delhi,28.7041,77.1025,"['gas_station', 'pharmacy', 'restaurant']",34.03342411532152,15,1938
+user_00233,Bengaluru,12.9716,77.5946,"['travel', 'utilities', 'home_goods', 'gas_station']",22.399525854709786,20,558
+user_00234,Delhi,28.7041,77.1025,"['restaurant', 'travel', 'gas_station']",119.86504124563265,12,704
+user_00235,Chicago,41.8781,-87.6298,"['entertainment', 'electronics', 'pharmacy', 'travel', 'clothing']",48.44123497929718,21,353
+user_00236,Mumbai,19.076,72.8777,"['utilities', 'travel', 'clothing', 'gas_station']",9.824845652919722,18,1270
+user_00237,Los Angeles,34.0522,-118.2437,"['home_goods', 'entertainment', 'gas_station', 'utilities']",37.035339886435466,18,2587
+user_00238,Bengaluru,12.9716,77.5946,"['grocery', 'restaurant', 'entertainment']",22.263044826214063,18,2392
+user_00239,Mumbai,19.076,72.8777,"['home_goods', 'streaming', 'entertainment', 'grocery']",55.227443847110706,15,2598
+user_00240,Mumbai,19.076,72.8777,"['ride_share', 'electronics', 'streaming', 'clothing', 'entertainment']",20.583454159921256,9,2850
+user_00241,New York,40.7128,-74.006,"['ride_share', 'streaming', 'entertainment', 'home_goods']",30.912422789089703,11,1423
+user_00242,Chicago,41.8781,-87.6298,"['entertainment', 'pharmacy', 'utilities', 'streaming', 'gas_station']",44.83514719284106,20,1547
+user_00243,Los Angeles,34.0522,-118.2437,"['electronics', 'ride_share', 'restaurant', 'clothing', 'utilities']",55.67065213927121,11,607
+user_00244,Los Angeles,34.0522,-118.2437,"['clothing', 'streaming', 'home_goods']",16.116154527998514,14,1046
+user_00245,Chicago,41.8781,-87.6298,"['home_goods', 'pharmacy', 'electronics', 'gas_station', 'ride_share']",27.09364662439008,16,1942
+user_00246,London,51.5074,-0.1278,"['ride_share', 'grocery', 'restaurant', 'streaming', 'entertainment']",24.904109083846127,11,911
+user_00247,Bengaluru,12.9716,77.5946,"['grocery', 'clothing', 'ride_share']",22.376302179988013,17,2709
+user_00248,London,51.5074,-0.1278,"['travel', 'grocery', 'restaurant', 'streaming', 'gas_station']",95.5139723551582,22,1113
+user_00249,Bengaluru,12.9716,77.5946,"['pharmacy', 'grocery', 'streaming', 'utilities', 'electronics', 'gas_station']",42.224010421543404,16,1212
+user_00250,Los Angeles,34.0522,-118.2437,"['travel', 'ride_share', 'entertainment', 'clothing', 'restaurant', 'utilities']",15.540812490659508,9,1643
+user_00251,Bengaluru,12.9716,77.5946,"['travel', 'pharmacy', 'gas_station', 'electronics', 'streaming']",57.438635442440614,16,194
+user_00252,New York,40.7128,-74.006,"['gas_station', 'pharmacy', 'ride_share']",118.30827504591396,16,1901
+user_00253,Chicago,41.8781,-87.6298,"['pharmacy', 'home_goods', 'entertainment', 'gas_station']",61.52718787119598,14,2555
+user_00254,Mumbai,19.076,72.8777,"['travel', 'entertainment', 'utilities', 'ride_share', 'clothing']",13.308168510574145,15,98
+user_00255,Bengaluru,12.9716,77.5946,"['utilities', 'restaurant', 'streaming', 'clothing', 'grocery']",24.765698141135132,17,1973
+user_00256,Mumbai,19.076,72.8777,"['entertainment', 'grocery', 'home_goods', 'ride_share']",70.82037129806757,10,2177
+user_00257,Delhi,28.7041,77.1025,"['utilities', 'electronics', 'grocery', 'restaurant']",21.658507223792874,11,107
+user_00258,London,51.5074,-0.1278,"['streaming', 'gas_station', 'entertainment', 'electronics', 'home_goods']",43.2194945800201,16,2534
+user_00259,London,51.5074,-0.1278,"['entertainment', 'gas_station', 'travel']",52.70869497930598,11,2327
+user_00260,Bengaluru,12.9716,77.5946,"['travel', 'streaming', 'pharmacy', 'gas_station', 'ride_share', 'clothing']",18.98865540803221,13,2267
+user_00261,Bengaluru,12.9716,77.5946,"['home_goods', 'ride_share', 'electronics', 'entertainment', 'clothing']",31.953597949553785,16,1252
+user_00262,Houston,29.7604,-95.3698,"['clothing', 'electronics', 'ride_share', 'pharmacy', 'home_goods']",4.73622116867684,13,2325
+user_00263,Mumbai,19.076,72.8777,"['restaurant', 'home_goods', 'travel', 'streaming', 'utilities']",17.910146846963094,21,1443
+user_00264,Chicago,41.8781,-87.6298,"['grocery', 'clothing', 'restaurant', 'pharmacy', 'ride_share']",28.458847862979653,18,1080
+user_00265,London,51.5074,-0.1278,"['electronics', 'travel', 'clothing', 'utilities']",15.663451848427238,19,1142
+user_00266,Chicago,41.8781,-87.6298,"['home_goods', 'entertainment', 'electronics']",88.18587319778841,11,237
+user_00267,Houston,29.7604,-95.3698,"['grocery', 'restaurant', 'streaming', 'pharmacy']",14.040067035908448,19,1964
+user_00268,Los Angeles,34.0522,-118.2437,"['grocery', 'travel', 'gas_station', 'streaming']",25.431112041283882,18,1978
+user_00269,London,51.5074,-0.1278,"['clothing', 'pharmacy', 'entertainment', 'grocery']",35.81777742861045,22,396
+user_00270,Houston,29.7604,-95.3698,"['gas_station', 'streaming', 'entertainment']",78.63083878498574,22,178
+user_00271,Delhi,28.7041,77.1025,"['gas_station', 'clothing', 'grocery', 'home_goods', 'utilities', 'ride_share']",13.991957626356054,17,469
+user_00272,Bengaluru,12.9716,77.5946,"['ride_share', 'utilities', 'travel', 'home_goods', 'entertainment']",66.5463203161033,22,579
+user_00273,London,51.5074,-0.1278,"['electronics', 'restaurant', 'pharmacy', 'gas_station', 'ride_share']",33.319400888899075,18,1083
+user_00274,Chicago,41.8781,-87.6298,"['entertainment', 'pharmacy', 'clothing']",18.376906767429503,17,2792
+user_00275,Houston,29.7604,-95.3698,"['home_goods', 'utilities', 'streaming', 'entertainment']",43.696241195009364,16,1373
+user_00276,Los Angeles,34.0522,-118.2437,"['utilities', 'restaurant', 'gas_station', 'home_goods', 'ride_share', 'travel']",37.316508555069476,22,1046
+user_00277,New York,40.7128,-74.006,"['streaming', 'electronics', 'ride_share', 'clothing', 'pharmacy']",23.100860633719993,12,2415
+user_00278,New York,40.7128,-74.006,"['utilities', 'pharmacy', 'electronics', 'grocery', 'restaurant']",34.531821146138405,15,1286
+user_00279,Chicago,41.8781,-87.6298,"['utilities', 'travel', 'clothing', 'restaurant', 'home_goods', 'gas_station']",26.280095876619402,17,934
+user_00280,Houston,29.7604,-95.3698,"['ride_share', 'gas_station', 'entertainment', 'pharmacy']",35.449544618344,14,2905
+user_00281,London,51.5074,-0.1278,"['electronics', 'utilities', 'home_goods', 'restaurant']",49.268178430956965,16,1859
+user_00282,Bengaluru,12.9716,77.5946,"['home_goods', 'restaurant', 'grocery']",85.76492211044274,21,2273
+user_00283,Houston,29.7604,-95.3698,"['gas_station', 'pharmacy', 'travel', 'ride_share']",15.757409525402492,9,2816
+user_00284,Houston,29.7604,-95.3698,"['restaurant', 'travel', 'ride_share', 'grocery', 'home_goods', 'entertainment']",119.08291614369368,16,1731
+user_00285,London,51.5074,-0.1278,"['travel', 'ride_share', 'clothing']",10.26507462492841,19,119
+user_00286,Delhi,28.7041,77.1025,"['grocery', 'electronics', 'home_goods', 'restaurant', 'entertainment']",30.232845810423505,14,1441
+user_00287,Los Angeles,34.0522,-118.2437,"['restaurant', 'ride_share', 'grocery']",47.13379802770026,12,1704
+user_00288,Chicago,41.8781,-87.6298,"['utilities', 'entertainment', 'streaming', 'pharmacy']",39.19680038529633,22,1596
+user_00289,London,51.5074,-0.1278,"['streaming', 'restaurant', 'travel', 'gas_station', 'pharmacy', 'grocery']",22.791331997056464,10,2230
+user_00290,Delhi,28.7041,77.1025,"['entertainment', 'electronics', 'grocery', 'home_goods']",29.227985264902276,12,1926
+user_00291,Delhi,28.7041,77.1025,"['electronics', 'entertainment', 'ride_share', 'pharmacy', 'gas_station', 'home_goods']",24.635769688471846,11,2999
+user_00292,Los Angeles,34.0522,-118.2437,"['utilities', 'streaming', 'home_goods']",23.251767388024597,20,94
+user_00293,Houston,29.7604,-95.3698,"['restaurant', 'entertainment', 'home_goods', 'grocery']",55.133706272512505,15,2478
+user_00294,New York,40.7128,-74.006,"['entertainment', 'grocery', 'streaming', 'ride_share']",41.02613454577053,11,2240
+user_00295,Houston,29.7604,-95.3698,"['gas_station', 'travel', 'clothing']",21.851165101510972,11,2389
+user_00296,Bengaluru,12.9716,77.5946,"['electronics', 'clothing', 'gas_station', 'travel', 'entertainment']",56.812701873479156,14,1260
+user_00297,Mumbai,19.076,72.8777,"['travel', 'home_goods', 'gas_station']",39.82041468325566,18,2810
+user_00298,Delhi,28.7041,77.1025,"['grocery', 'pharmacy', 'streaming', 'travel', 'utilities', 'ride_share']",53.93163744505008,14,1702
+user_00299,Chicago,41.8781,-87.6298,"['streaming', 'gas_station', 'travel', 'ride_share', 'electronics']",48.3167023463452,21,953
+user_00300,Mumbai,19.076,72.8777,"['ride_share', 'grocery', 'travel', 'streaming']",20.137887548782192,14,2312
+user_00301,Chicago,41.8781,-87.6298,"['electronics', 'clothing', 'entertainment', 'pharmacy', 'restaurant', 'home_goods']",23.662496671783877,21,1549
+user_00302,Los Angeles,34.0522,-118.2437,"['grocery', 'clothing', 'streaming', 'entertainment']",51.85110070414117,21,328
+user_00303,Houston,29.7604,-95.3698,"['ride_share', 'electronics', 'pharmacy', 'clothing']",47.761609069897744,22,92
+user_00304,Houston,29.7604,-95.3698,"['entertainment', 'restaurant', 'ride_share', 'electronics']",32.7027457942632,19,2505
+user_00305,Houston,29.7604,-95.3698,"['electronics', 'travel', 'pharmacy', 'clothing', 'streaming', 'entertainment']",35.530675785333095,16,2687
+user_00306,Bengaluru,12.9716,77.5946,"['clothing', 'pharmacy', 'travel', 'ride_share', 'home_goods']",71.27879924936627,9,2989
+user_00307,London,51.5074,-0.1278,"['electronics', 'pharmacy', 'utilities', 'streaming', 'grocery']",23.22100290341349,17,936
+user_00308,Chicago,41.8781,-87.6298,"['clothing', 'travel', 'home_goods']",45.98238685464359,17,2979
+user_00309,Delhi,28.7041,77.1025,"['gas_station', 'electronics', 'pharmacy', 'utilities', 'streaming']",29.332156583671445,17,1036
+user_00310,London,51.5074,-0.1278,"['clothing', 'ride_share', 'utilities', 'home_goods', 'gas_station']",29.06083170682133,19,1472
+user_00311,Chicago,41.8781,-87.6298,"['entertainment', 'travel', 'ride_share', 'gas_station']",64.0245184766188,22,2250
+user_00312,New York,40.7128,-74.006,"['restaurant', 'utilities', 'grocery']",54.33941342430938,20,56
+user_00313,Delhi,28.7041,77.1025,"['utilities', 'electronics', 'restaurant', 'gas_station']",53.95259451228653,8,925
+user_00314,London,51.5074,-0.1278,"['grocery', 'home_goods', 'utilities', 'ride_share', 'travel']",72.47830562279982,8,57
+user_00315,Delhi,28.7041,77.1025,"['grocery', 'travel', 'clothing']",33.53542373175348,16,1204
+user_00316,New York,40.7128,-74.006,"['gas_station', 'restaurant', 'utilities', 'travel', 'entertainment', 'home_goods']",49.85764191118663,11,2568
+user_00317,Mumbai,19.076,72.8777,"['clothing', 'streaming', 'restaurant', 'pharmacy', 'utilities']",27.490485034176494,15,2344
+user_00318,Houston,29.7604,-95.3698,"['clothing', 'utilities', 'restaurant', 'grocery']",40.22544724875941,9,1690
+user_00319,Delhi,28.7041,77.1025,"['travel', 'ride_share', 'grocery', 'home_goods', 'gas_station', 'entertainment']",30.62798603757125,15,1807
+user_00320,Bengaluru,12.9716,77.5946,"['travel', 'grocery', 'electronics']",35.09987534340711,11,2865
+user_00321,London,51.5074,-0.1278,"['grocery', 'restaurant', 'clothing', 'travel', 'entertainment']",47.32762747017748,10,1318
+user_00322,New York,40.7128,-74.006,"['home_goods', 'gas_station', 'streaming', 'restaurant']",20.268492567965936,12,695
+user_00323,Houston,29.7604,-95.3698,"['utilities', 'travel', 'pharmacy', 'streaming', 'gas_station', 'entertainment']",116.21388916944781,19,2996
+user_00324,Los Angeles,34.0522,-118.2437,"['grocery', 'restaurant', 'streaming', 'electronics', 'utilities']",18.10864721912749,13,2508
+user_00325,Delhi,28.7041,77.1025,"['grocery', 'utilities', 'clothing', 'ride_share', 'travel']",15.982379471125627,11,1487
+user_00326,Delhi,28.7041,77.1025,"['gas_station', 'utilities', 'home_goods', 'streaming', 'restaurant', 'travel']",66.34487554430356,17,1239
+user_00327,Houston,29.7604,-95.3698,"['restaurant', 'clothing', 'gas_station']",53.24998997772403,14,2945
+user_00328,Chicago,41.8781,-87.6298,"['pharmacy', 'entertainment', 'restaurant', 'home_goods', 'grocery', 'gas_station']",48.15725925534151,15,1504
+user_00329,Mumbai,19.076,72.8777,"['gas_station', 'restaurant', 'entertainment']",48.27951282487354,14,1868
+user_00330,Delhi,28.7041,77.1025,"['grocery', 'restaurant', 'pharmacy']",32.8730093407472,16,411
+user_00331,Bengaluru,12.9716,77.5946,"['grocery', 'clothing', 'streaming', 'home_goods', 'restaurant', 'pharmacy']",19.329788992711787,22,2321
+user_00332,Houston,29.7604,-95.3698,"['utilities', 'streaming', 'gas_station', 'home_goods']",34.6564111646074,12,1263
+user_00333,Mumbai,19.076,72.8777,"['gas_station', 'restaurant', 'entertainment', 'streaming', 'clothing', 'electronics']",22.058609365272105,12,2013
+user_00334,Los Angeles,34.0522,-118.2437,"['clothing', 'electronics', 'ride_share', 'utilities', 'home_goods']",59.44620821645607,9,584
+user_00335,Mumbai,19.076,72.8777,"['streaming', 'pharmacy', 'home_goods']",30.318726899768947,14,1379
+user_00336,London,51.5074,-0.1278,"['streaming', 'utilities', 'home_goods', 'gas_station', 'clothing']",20.180195080983353,13,2500
+user_00337,Houston,29.7604,-95.3698,"['pharmacy', 'gas_station', 'streaming', 'entertainment', 'clothing', 'travel']",27.307694027922008,19,2622
+user_00338,London,51.5074,-0.1278,"['pharmacy', 'streaming', 'clothing', 'utilities']",42.42589354121732,13,496
+user_00339,Houston,29.7604,-95.3698,"['utilities', 'travel', 'grocery', 'ride_share']",23.61224110192667,19,888
+user_00340,London,51.5074,-0.1278,"['entertainment', 'restaurant', 'streaming', 'ride_share', 'gas_station']",20.21991000235152,18,1270
+user_00341,Houston,29.7604,-95.3698,"['utilities', 'gas_station', 'streaming', 'home_goods', 'restaurant']",38.329212230873196,15,2479
+user_00342,London,51.5074,-0.1278,"['travel', 'entertainment', 'streaming', 'utilities', 'grocery', 'home_goods']",38.35864563396354,13,2903
+user_00343,Los Angeles,34.0522,-118.2437,"['electronics', 'utilities', 'pharmacy']",24.430542584297694,10,2680
+user_00344,New York,40.7128,-74.006,"['pharmacy', 'streaming', 'restaurant', 'grocery', 'home_goods', 'gas_station']",24.962557860323116,11,2121
+user_00345,Houston,29.7604,-95.3698,"['pharmacy', 'streaming', 'ride_share', 'travel', 'gas_station', 'home_goods']",38.06251586995204,8,2007
+user_00346,Los Angeles,34.0522,-118.2437,"['streaming', 'restaurant', 'utilities', 'gas_station', 'pharmacy']",13.88972551319022,12,1435
+user_00347,London,51.5074,-0.1278,"['travel', 'ride_share', 'pharmacy', 'utilities']",14.232409674166112,9,1824
+user_00348,London,51.5074,-0.1278,"['restaurant', 'clothing', 'grocery', 'entertainment', 'home_goods']",21.51893977778838,21,1435
+user_00349,Los Angeles,34.0522,-118.2437,"['entertainment', 'electronics', 'travel', 'gas_station']",29.134752597639203,16,685
+user_00350,Bengaluru,12.9716,77.5946,"['ride_share', 'electronics', 'streaming', 'gas_station', 'travel', 'pharmacy']",39.906712361518764,18,1800
+user_00351,Delhi,28.7041,77.1025,"['entertainment', 'home_goods', 'electronics']",80.25537437476235,15,2455
+user_00352,Delhi,28.7041,77.1025,"['grocery', 'electronics', 'utilities', 'clothing', 'restaurant', 'travel']",55.40089638855756,9,2229
+user_00353,Chicago,41.8781,-87.6298,"['pharmacy', 'electronics', 'ride_share', 'restaurant', 'clothing']",30.085306066780433,18,2034
+user_00354,Bengaluru,12.9716,77.5946,"['home_goods', 'streaming', 'entertainment', 'restaurant', 'pharmacy', 'gas_station']",32.739761107417685,21,1905
+user_00355,Chicago,41.8781,-87.6298,"['home_goods', 'entertainment', 'restaurant', 'gas_station', 'pharmacy']",18.146584863531558,9,1007
+user_00356,Mumbai,19.076,72.8777,"['gas_station', 'pharmacy', 'entertainment']",32.749644871513695,16,1621
+user_00357,Delhi,28.7041,77.1025,"['home_goods', 'streaming', 'utilities', 'gas_station']",27.84921604118244,15,2633
+user_00358,Chicago,41.8781,-87.6298,"['ride_share', 'clothing', 'gas_station', 'home_goods']",40.19051956929911,13,1877
+user_00359,New York,40.7128,-74.006,"['grocery', 'ride_share', 'gas_station', 'electronics', 'streaming']",20.159213587154056,16,2100
+user_00360,London,51.5074,-0.1278,"['utilities', 'ride_share', 'streaming', 'entertainment', 'travel', 'restaurant']",45.22309503935612,9,2345
+user_00361,New York,40.7128,-74.006,"['clothing', 'grocery', 'entertainment', 'electronics']",83.06665416981575,16,1212
+user_00362,Chicago,41.8781,-87.6298,"['home_goods', 'ride_share', 'travel', 'entertainment', 'restaurant', 'clothing']",31.023466777273903,9,1127
+user_00363,Bengaluru,12.9716,77.5946,"['entertainment', 'ride_share', 'travel']",42.14124841107511,11,1771
+user_00364,Los Angeles,34.0522,-118.2437,"['clothing', 'grocery', 'ride_share', 'entertainment']",50.1032759925884,13,386
+user_00365,London,51.5074,-0.1278,"['electronics', 'entertainment', 'home_goods']",26.030468488564374,19,1466
+user_00366,Delhi,28.7041,77.1025,"['home_goods', 'gas_station', 'electronics', 'entertainment']",37.881220542369256,20,273
+user_00367,Bengaluru,12.9716,77.5946,"['home_goods', 'travel', 'gas_station', 'pharmacy', 'clothing']",33.366601362024824,12,2375
+user_00368,Mumbai,19.076,72.8777,"['gas_station', 'streaming', 'grocery']",35.114201828207094,12,2716
+user_00369,Chicago,41.8781,-87.6298,"['electronics', 'gas_station', 'pharmacy', 'entertainment']",20.82583180113581,20,2799
+user_00370,Delhi,28.7041,77.1025,"['gas_station', 'home_goods', 'clothing', 'streaming', 'travel', 'electronics']",33.60604980747658,9,2625
+user_00371,Los Angeles,34.0522,-118.2437,"['travel', 'clothing', 'pharmacy', 'ride_share', 'entertainment', 'gas_station']",44.647529468866665,17,40
+user_00372,Los Angeles,34.0522,-118.2437,"['utilities', 'entertainment', 'pharmacy', 'restaurant', 'streaming', 'travel']",79.09788725957614,14,897
+user_00373,London,51.5074,-0.1278,"['pharmacy', 'clothing', 'entertainment', 'travel', 'gas_station']",58.88359303967678,17,2017
+user_00374,Bengaluru,12.9716,77.5946,"['grocery', 'restaurant', 'ride_share']",120.53130051446853,8,538
+user_00375,Chicago,41.8781,-87.6298,"['ride_share', 'grocery', 'streaming', 'electronics', 'gas_station', 'pharmacy']",20.896704398754423,12,681
+user_00376,Mumbai,19.076,72.8777,"['utilities', 'pharmacy', 'clothing']",55.89038613141606,9,1553
+user_00377,Chicago,41.8781,-87.6298,"['streaming', 'utilities', 'clothing']",36.96624516607211,19,2894
+user_00378,Houston,29.7604,-95.3698,"['utilities', 'restaurant', 'entertainment', 'grocery', 'electronics', 'ride_share']",123.2089580536627,9,573
+user_00379,Houston,29.7604,-95.3698,"['grocery', 'entertainment', 'pharmacy', 'restaurant', 'streaming', 'home_goods']",20.389519702906036,10,1986
+user_00380,Los Angeles,34.0522,-118.2437,"['streaming', 'restaurant', 'utilities', 'home_goods']",20.008694311979887,13,1535
+user_00381,Mumbai,19.076,72.8777,"['streaming', 'gas_station', 'utilities', 'restaurant']",23.112287736244905,16,2337
+user_00382,New York,40.7128,-74.006,"['ride_share', 'pharmacy', 'electronics', 'gas_station']",9.25961587312829,22,1716
+user_00383,London,51.5074,-0.1278,"['restaurant', 'entertainment', 'gas_station', 'utilities']",24.156342789258662,17,1602
+user_00384,Bengaluru,12.9716,77.5946,"['pharmacy', 'gas_station', 'electronics', 'clothing', 'restaurant', 'ride_share']",20.99995727227499,16,2491
+user_00385,Mumbai,19.076,72.8777,"['utilities', 'clothing', 'electronics']",36.242638031375606,16,2515
+user_00386,Houston,29.7604,-95.3698,"['clothing', 'utilities', 'grocery', 'electronics', 'ride_share', 'travel']",40.652225626981554,9,1017
+user_00387,London,51.5074,-0.1278,"['travel', 'grocery', 'pharmacy']",102.07445556646319,22,1326
+user_00388,Chicago,41.8781,-87.6298,"['home_goods', 'streaming', 'pharmacy', 'travel', 'gas_station', 'utilities']",58.571855691574754,15,328
+user_00389,New York,40.7128,-74.006,"['grocery', 'clothing', 'electronics']",23.426264479975885,8,277
+user_00390,Delhi,28.7041,77.1025,"['utilities', 'travel', 'streaming', 'home_goods', 'entertainment']",19.316336664968773,9,2653
+user_00391,Chicago,41.8781,-87.6298,"['restaurant', 'clothing', 'entertainment', 'travel', 'electronics']",44.48497549798783,20,666
+user_00392,Bengaluru,12.9716,77.5946,"['home_goods', 'utilities', 'restaurant', 'clothing', 'streaming', 'pharmacy']",14.997148391371152,21,1007
+user_00393,New York,40.7128,-74.006,"['restaurant', 'streaming', 'entertainment', 'ride_share']",99.37248450656332,17,2523
+user_00394,New York,40.7128,-74.006,"['utilities', 'entertainment', 'gas_station', 'restaurant', 'grocery']",67.19938343635502,19,592
+user_00395,New York,40.7128,-74.006,"['ride_share', 'pharmacy', 'travel', 'home_goods']",24.990471413065332,20,2982
+user_00396,Mumbai,19.076,72.8777,"['pharmacy', 'gas_station', 'clothing', 'restaurant']",11.84752852509265,20,150
+user_00397,Bengaluru,12.9716,77.5946,"['clothing', 'travel', 'restaurant', 'entertainment', 'home_goods', 'electronics']",74.61364687788601,15,2122
+user_00398,Bengaluru,12.9716,77.5946,"['ride_share', 'home_goods', 'gas_station']",30.91606936333304,13,674
+user_00399,Mumbai,19.076,72.8777,"['home_goods', 'utilities', 'restaurant']",69.594795495721,11,2114
+user_00400,New York,40.7128,-74.006,"['grocery', 'electronics', 'entertainment']",12.722135190628512,15,1520
+user_00401,Delhi,28.7041,77.1025,"['gas_station', 'grocery', 'travel', 'streaming']",23.112532115176034,11,1348
+user_00402,Houston,29.7604,-95.3698,"['entertainment', 'pharmacy', 'clothing', 'restaurant', 'utilities', 'grocery']",33.219804522327316,16,2787
+user_00403,New York,40.7128,-74.006,"['electronics', 'travel', 'grocery', 'streaming']",34.0622031069366,9,1935
+user_00404,Mumbai,19.076,72.8777,"['pharmacy', 'restaurant', 'travel', 'ride_share', 'grocery']",25.278663932545737,13,851
+user_00405,Mumbai,19.076,72.8777,"['entertainment', 'home_goods', 'electronics', 'ride_share', 'pharmacy']",48.12058073019746,17,2050
+user_00406,Houston,29.7604,-95.3698,"['gas_station', 'grocery', 'streaming', 'utilities']",17.451537303161412,11,2248
+user_00407,Bengaluru,12.9716,77.5946,"['pharmacy', 'grocery', 'streaming']",30.40394315319055,21,1289
+user_00408,Los Angeles,34.0522,-118.2437,"['travel', 'electronics', 'streaming', 'ride_share']",35.59401048953005,8,613
+user_00409,Mumbai,19.076,72.8777,"['grocery', 'electronics', 'travel']",45.090126612999505,14,2900
+user_00410,Bengaluru,12.9716,77.5946,"['entertainment', 'restaurant', 'home_goods', 'utilities', 'gas_station', 'pharmacy']",50.752908511611494,21,1645
+user_00411,Los Angeles,34.0522,-118.2437,"['streaming', 'utilities', 'gas_station']",16.864566176790284,11,1224
+user_00412,Mumbai,19.076,72.8777,"['streaming', 'pharmacy', 'utilities', 'ride_share', 'clothing']",13.190956716335124,11,335
+user_00413,Houston,29.7604,-95.3698,"['home_goods', 'restaurant', 'gas_station', 'utilities']",71.27930929847507,10,1871
+user_00414,London,51.5074,-0.1278,"['streaming', 'restaurant', 'travel', 'pharmacy', 'electronics']",40.42257464247569,15,1292
+user_00415,London,51.5074,-0.1278,"['restaurant', 'entertainment', 'gas_station', 'clothing', 'grocery']",21.134527512221474,11,1372
+user_00416,Chicago,41.8781,-87.6298,"['entertainment', 'electronics', 'pharmacy']",83.98944912617691,14,2133
+user_00417,New York,40.7128,-74.006,"['clothing', 'gas_station', 'grocery', 'streaming', 'ride_share']",35.49545927577087,16,2283
+user_00418,Houston,29.7604,-95.3698,"['ride_share', 'restaurant', 'gas_station']",67.19362053032667,9,78
+user_00419,New York,40.7128,-74.006,"['gas_station', 'electronics', 'streaming', 'pharmacy']",34.48453935116423,18,2611
+user_00420,Los Angeles,34.0522,-118.2437,"['restaurant', 'grocery', 'entertainment', 'electronics', 'ride_share']",114.02853851649502,20,557
+user_00421,Los Angeles,34.0522,-118.2437,"['restaurant', 'grocery', 'ride_share', 'utilities', 'gas_station']",94.93614478729684,22,2380
+user_00422,Delhi,28.7041,77.1025,"['ride_share', 'grocery', 'streaming', 'home_goods', 'gas_station', 'entertainment']",28.520453909863527,11,796
+user_00423,Mumbai,19.076,72.8777,"['ride_share', 'gas_station', 'grocery', 'electronics', 'clothing']",59.31976588238895,15,1717
+user_00424,London,51.5074,-0.1278,"['restaurant', 'clothing', 'streaming']",48.77537475156399,10,1747
+user_00425,Houston,29.7604,-95.3698,"['utilities', 'travel', 'grocery', 'streaming']",75.27732303375697,20,2951
+user_00426,Bengaluru,12.9716,77.5946,"['travel', 'ride_share', 'pharmacy', 'entertainment', 'home_goods', 'electronics']",18.560690376054104,12,766
+user_00427,New York,40.7128,-74.006,"['home_goods', 'electronics', 'grocery', 'clothing', 'entertainment']",49.98039737218069,20,1962
+user_00428,Bengaluru,12.9716,77.5946,"['gas_station', 'restaurant', 'electronics', 'home_goods']",62.49300885150073,12,2215
+user_00429,New York,40.7128,-74.006,"['home_goods', 'streaming', 'pharmacy', 'gas_station']",11.527740040178172,10,998
+user_00430,Bengaluru,12.9716,77.5946,"['home_goods', 'grocery', 'pharmacy', 'gas_station', 'electronics']",16.281750712256525,21,2046
+user_00431,Mumbai,19.076,72.8777,"['ride_share', 'grocery', 'restaurant', 'utilities']",9.742138902032542,11,2494
+user_00432,Houston,29.7604,-95.3698,"['travel', 'ride_share', 'grocery']",28.172769738579778,13,2545
+user_00433,Houston,29.7604,-95.3698,"['pharmacy', 'gas_station', 'entertainment', 'grocery']",50.93372885325141,8,635
+user_00434,Chicago,41.8781,-87.6298,"['travel', 'pharmacy', 'restaurant']",81.56614052071244,13,2915
+user_00435,Delhi,28.7041,77.1025,"['pharmacy', 'clothing', 'entertainment']",34.62087653769788,10,675
+user_00436,Delhi,28.7041,77.1025,"['utilities', 'pharmacy', 'gas_station', 'travel', 'entertainment', 'restaurant']",87.98526236629851,18,2442
+user_00437,Chicago,41.8781,-87.6298,"['clothing', 'entertainment', 'gas_station', 'home_goods', 'grocery', 'pharmacy']",14.467997265276457,17,1633
+user_00438,New York,40.7128,-74.006,"['home_goods', 'pharmacy', 'entertainment', 'electronics']",11.917054630968986,18,2346
+user_00439,Los Angeles,34.0522,-118.2437,"['gas_station', 'pharmacy', 'restaurant', 'electronics', 'utilities', 'entertainment']",32.029949297862146,10,2635
+user_00440,Los Angeles,34.0522,-118.2437,"['ride_share', 'grocery', 'clothing', 'electronics', 'travel']",41.69742054108592,19,307
+user_00441,Bengaluru,12.9716,77.5946,"['restaurant', 'grocery', 'utilities', 'streaming', 'ride_share']",32.472161438422106,19,1748
+user_00442,Chicago,41.8781,-87.6298,"['ride_share', 'streaming', 'pharmacy', 'travel', 'utilities', 'grocery']",9.57863157551928,21,1993
+user_00443,Houston,29.7604,-95.3698,"['ride_share', 'restaurant', 'grocery', 'clothing']",31.391211848105225,8,1335
+user_00444,Mumbai,19.076,72.8777,"['restaurant', 'pharmacy', 'gas_station']",15.13966770619973,22,1567
+user_00445,Chicago,41.8781,-87.6298,"['travel', 'restaurant', 'pharmacy']",49.491628264326025,17,2543
+user_00446,London,51.5074,-0.1278,"['streaming', 'utilities', 'gas_station']",41.26270014336678,17,1808
+user_00447,Chicago,41.8781,-87.6298,"['restaurant', 'pharmacy', 'electronics']",18.841693020668643,11,1706
+user_00448,Mumbai,19.076,72.8777,"['clothing', 'electronics', 'restaurant', 'grocery', 'streaming']",24.32926263705986,17,2281
+user_00449,London,51.5074,-0.1278,"['grocery', 'pharmacy', 'entertainment', 'streaming']",17.53978776592629,9,1236
+user_00450,London,51.5074,-0.1278,"['restaurant', 'grocery', 'electronics', 'gas_station']",31.893191092633305,18,1225
+user_00451,Los Angeles,34.0522,-118.2437,"['restaurant', 'clothing', 'streaming', 'ride_share', 'travel', 'pharmacy']",58.73791280107092,12,403
+user_00452,Delhi,28.7041,77.1025,"['pharmacy', 'streaming', 'entertainment', 'gas_station']",18.330463944532887,15,212
+user_00453,Mumbai,19.076,72.8777,"['ride_share', 'clothing', 'electronics', 'utilities', 'grocery', 'restaurant']",44.809846773034046,20,2882
+user_00454,Los Angeles,34.0522,-118.2437,"['utilities', 'pharmacy', 'travel']",24.091171099970342,14,2445
+user_00455,Houston,29.7604,-95.3698,"['streaming', 'travel', 'entertainment']",20.579106234879223,16,2844
+user_00456,London,51.5074,-0.1278,"['ride_share', 'clothing', 'restaurant', 'streaming']",31.055681913673556,22,2955
+user_00457,New York,40.7128,-74.006,"['restaurant', 'ride_share', 'gas_station', 'home_goods']",17.79388050881209,11,819
+user_00458,Chicago,41.8781,-87.6298,"['streaming', 'restaurant', 'entertainment']",23.75541291662859,11,2599
+user_00459,Chicago,41.8781,-87.6298,"['pharmacy', 'restaurant', 'utilities', 'streaming', 'travel']",16.139557795960762,16,1365
+user_00460,Mumbai,19.076,72.8777,"['grocery', 'home_goods', 'utilities', 'travel', 'streaming', 'entertainment']",107.64460212721981,14,642
+user_00461,Chicago,41.8781,-87.6298,"['restaurant', 'home_goods', 'entertainment']",33.82357792968739,20,1201
+user_00462,Bengaluru,12.9716,77.5946,"['clothing', 'streaming', 'ride_share', 'home_goods', 'grocery', 'restaurant']",21.7619861958374,12,1680
+user_00463,Chicago,41.8781,-87.6298,"['grocery', 'streaming', 'pharmacy', 'electronics', 'entertainment', 'home_goods']",37.65207051305835,15,1130
+user_00464,Bengaluru,12.9716,77.5946,"['pharmacy', 'clothing', 'utilities']",30.95712461405757,12,2043
+user_00465,Los Angeles,34.0522,-118.2437,"['gas_station', 'clothing', 'ride_share', 'pharmacy']",29.0035501157951,12,1737
+user_00466,Los Angeles,34.0522,-118.2437,"['ride_share', 'electronics', 'streaming', 'entertainment']",47.870527368582685,20,2145
+user_00467,Bengaluru,12.9716,77.5946,"['travel', 'gas_station', 'restaurant']",52.169843959454596,12,2936
+user_00468,Delhi,28.7041,77.1025,"['travel', 'home_goods', 'grocery', 'gas_station']",24.087651214409558,11,852
+user_00469,New York,40.7128,-74.006,"['grocery', 'ride_share', 'entertainment', 'pharmacy']",23.441525780455343,19,845
+user_00470,Mumbai,19.076,72.8777,"['ride_share', 'travel', 'streaming', 'restaurant', 'grocery']",28.07751229384724,11,1555
+user_00471,London,51.5074,-0.1278,"['gas_station', 'ride_share', 'home_goods', 'travel', 'pharmacy', 'entertainment']",8.321539727884524,10,1089
+user_00472,Los Angeles,34.0522,-118.2437,"['grocery', 'streaming', 'entertainment', 'gas_station', 'electronics']",13.34157851144446,21,936
+user_00473,Houston,29.7604,-95.3698,"['clothing', 'utilities', 'streaming', 'travel']",75.19799440596643,8,2824
+user_00474,New York,40.7128,-74.006,"['gas_station', 'utilities', 'entertainment', 'grocery', 'electronics', 'home_goods']",88.85276092338034,17,1281
+user_00475,Mumbai,19.076,72.8777,"['streaming', 'pharmacy', 'ride_share', 'clothing', 'electronics', 'home_goods']",28.519223716701603,12,2803
+user_00476,Delhi,28.7041,77.1025,"['grocery', 'travel', 'pharmacy']",46.80238568658595,16,2681
+user_00477,Mumbai,19.076,72.8777,"['utilities', 'restaurant', 'ride_share', 'entertainment', 'pharmacy']",39.91491616375402,12,2653
+user_00478,Bengaluru,12.9716,77.5946,"['clothing', 'utilities', 'entertainment', 'electronics', 'gas_station']",210.04640554125598,16,1014
+user_00479,New York,40.7128,-74.006,"['utilities', 'pharmacy', 'gas_station', 'grocery', 'ride_share', 'home_goods']",64.82847571381497,12,1744
+user_00480,Delhi,28.7041,77.1025,"['entertainment', 'grocery', 'home_goods', 'electronics', 'pharmacy', 'ride_share']",30.668910221803277,19,940
+user_00481,London,51.5074,-0.1278,"['travel', 'clothing', 'gas_station', 'entertainment', 'home_goods']",18.665478264521553,12,429
+user_00482,London,51.5074,-0.1278,"['entertainment', 'clothing', 'travel', 'gas_station']",12.630723359544747,18,1404
+user_00483,Los Angeles,34.0522,-118.2437,"['pharmacy', 'electronics', 'clothing', 'streaming']",37.41524274885895,20,1387
+user_00484,Bengaluru,12.9716,77.5946,"['home_goods', 'clothing', 'ride_share', 'restaurant', 'entertainment']",21.035038615813594,8,2628
+user_00485,Los Angeles,34.0522,-118.2437,"['electronics', 'travel', 'restaurant', 'streaming', 'clothing', 'entertainment']",14.106670551071337,8,647
+user_00486,Chicago,41.8781,-87.6298,"['pharmacy', 'streaming', 'home_goods', 'ride_share']",22.467195542815567,10,1325
+user_00487,Chicago,41.8781,-87.6298,"['ride_share', 'pharmacy', 'gas_station']",17.306310397087373,13,2628
+user_00488,New York,40.7128,-74.006,"['ride_share', 'clothing', 'electronics']",91.12981068085709,20,720
+user_00489,Chicago,41.8781,-87.6298,"['restaurant', 'gas_station', 'home_goods', 'streaming', 'travel', 'electronics']",56.203770993085655,14,1985
+user_00490,Delhi,28.7041,77.1025,"['grocery', 'travel', 'electronics']",32.95741966817047,19,1558
+user_00491,New York,40.7128,-74.006,"['travel', 'electronics', 'grocery', 'home_goods', 'utilities']",80.4766019632967,11,2870
+user_00492,Bengaluru,12.9716,77.5946,"['gas_station', 'restaurant', 'streaming', 'travel', 'clothing']",34.688942790033856,10,297
+user_00493,New York,40.7128,-74.006,"['clothing', 'ride_share', 'travel', 'home_goods', 'pharmacy']",19.751500817175458,14,2843
+user_00494,Chicago,41.8781,-87.6298,"['ride_share', 'pharmacy', 'electronics', 'gas_station', 'streaming']",82.5888304132315,8,965
+user_00495,Houston,29.7604,-95.3698,"['electronics', 'grocery', 'home_goods', 'travel']",45.7570567720687,10,534
+user_00496,Bengaluru,12.9716,77.5946,"['streaming', 'utilities', 'clothing']",17.772499797084702,20,2220
+user_00497,New York,40.7128,-74.006,"['utilities', 'restaurant', 'grocery']",29.541521823215426,8,2855
+user_00498,Los Angeles,34.0522,-118.2437,"['ride_share', 'streaming', 'restaurant', 'travel', 'clothing', 'electronics']",19.5823577867203,19,657
+user_00499,Houston,29.7604,-95.3698,"['clothing', 'streaming', 'restaurant']",14.444593054016089,18,2161
