@@ -44,11 +44,11 @@ function metricsTable() {
     ],
   });
   const rows = [
-    ["Precision", "99.4%"],
-    ["Recall", "99.4%"],
+    ["Precision", "99.3%"],
+    ["Recall", "99.5%"],
     ["F1 Score", "99.4%"],
-    ["AUC", "0.9997"],
-    ["False Positive Rate (legit traffic)", "0.03%"],
+    ["AUC", "0.9999"],
+    ["False Positive Rate (legit traffic)", "0.045%"],
   ].map(([m, v]) => new TableRow({ children: [cell(m, { width: 3500 }), cell(v, { width: 2500 })] }));
   return new Table({ rows: [header, ...rows], width: { size: 6000, type: WidthType.DXA } });
 }
@@ -62,12 +62,50 @@ function detectionTable() {
     ],
   });
   const rows = [
-    ["Synthetic Identity", "260 / 260", "100.0%"],
-    ["Card Testing", "440 / 440", "100.0%"],
+    ["Loyalty/Rewards Abuse", "60 / 60", "100.0%"],
+    ["Synthetic Identity", "296 / 296", "100.0%"],
     ["Transaction Laundering", "60 / 60", "100.0%"],
-    ["Behavioral Mimicry", "80 / 85", "94.1%"],
+    ["Storefront Churn", "244 / 244", "100.0%"],
+    ["Adversarial Evasion", "45 / 45", "100.0%"],
+    ["Card Testing", "398 / 398", "100.0%"],
+    ["Prompt Injection", "35 / 35", "100.0%"],
+    ["Generative Synthetic Fraud", "59 / 60", "98.3%"],
+    ["Behavioral Mimicry", "95 / 100", "95.0%"],
   ].map(([a, d, r]) => new TableRow({
     children: [cell(a, { width: 3500 }), cell(d, { width: 2200 }), cell(r, { width: 2200 })],
+  }));
+  return new Table({ rows: [header, ...rows], width: { size: 7900, type: WidthType.DXA } });
+}
+
+function adversarialTable() {
+  const header = new TableRow({
+    children: [
+      cell("Stage", { header: true, width: 4000 }),
+      cell("Adversarial Evasion Detection Rate", { header: true, width: 3900 }),
+    ],
+  });
+  const rows = [
+    ["Baseline model (before adversarial training)", "0 / 40 (0.0%)"],
+    ["After adversarial retraining", "45 / 45 (100.0%)"],
+  ].map(([s, r]) => new TableRow({
+    children: [cell(s, { width: 4000 }), cell(r, { width: 3900 })],
+  }));
+  return new Table({ rows: [header, ...rows], width: { size: 7900, type: WidthType.DXA } });
+}
+
+function poisoningTable() {
+  const header = new TableRow({
+    children: [
+      cell("Stage", { header: true, width: 4500 }),
+      cell("Recall", { header: true, width: 3400 }),
+    ],
+  });
+  const rows = [
+    ["Clean training data (no attack)", "98.15%"],
+    ["After poisoning (40% of fraud labels flipped)", "94.46%"],
+    ["After label-noise-filter defense", "97.85%"],
+  ].map(([s, r]) => new TableRow({
+    children: [cell(s, { width: 4500 }), cell(r, { width: 3400 })],
   }));
   return new Table({ rows: [header, ...rows], width: { size: 7900, type: WidthType.DXA } });
 }
@@ -104,10 +142,15 @@ function taxonomyTable() {
     ["AI-Paced Card Testing", "Paces authorization probes with human-like timing variance to evade rate limits", "Simulated"],
     ["Synthetic Identity Onboarding", "Generates coherent fake identities that pass KYC, then bust out with high-value fraud", "Simulated"],
     ["Transaction Laundering", "Generates fake storefronts/product descriptions to disguise illicit transactions", "Simulated"],
-    ["Deepfake Voice Social Engineering", "Voice clones impersonate cardholder or bank to authorize fraud / extract OTPs", "Documented"],
-    ["Personalized Phishing at Scale", "Generates thousands of context-aware phishing messages from breached data", "Documented"],
+    ["Adversarial Evasion of the Classifier", "Probes our own deployed model as a black box to find and exploit its decision boundary", "Simulated"],
+    ["Generative Synthetic Fraud (GAN-style)", "A generative model produces fraud statistically indistinguishable from legitimate transactions", "Simulated"],
+    ["Autonomous Storefront Churn", "Fake storefronts spun up, burst-processed, and torn down before risk monitoring catches on", "Simulated"],
+    ["Loyalty/Rewards Program Abuse", "AI-orchestrated bot network farms signup bonuses and reward points at scale", "Simulated"],
+    ["Prompt Injection Against Fraud-Ops AI", "Malicious instructions embedded in transaction memos targeting an LLM assistant", "Simulated"],
+    ["Data Poisoning of the Model", "Attacker flips training labels via a compromised feedback pipeline", "Simulated (defense demo)"],
+    ["Deepfake KYC / Biometric Bypass", "Synthetic video/audio/face-swap defeats liveness checks during onboarding", "Documented"],
+    ["AI Social Engineering at Scale", "Personalized phishing, chatbot pretexting, romance scams, deepfake BEC fraud", "Documented"],
     ["Chargeback Narrative Fraud", "Produces varied, plausible dispute narratives to evade text-similarity filters", "Documented"],
-    ["Biometric Spoofing", "Synthetic face/voice defeats biometric step-up authentication", "Documented"],
   ];
   const rows = data.map(([a, g, s]) => new TableRow({
     children: [cell(a, { width: 2800 }), cell(g, { width: 3600 }), cell(s, { width: 1800 })],
@@ -142,20 +185,25 @@ const doc = new Document({
 
       h1("2. Novel Fraud Attacks Identified"),
       body(
-        "Research covered eight distinct GenAI-powered payment fraud vectors, prioritizing breadth across " +
-        "channels and social-engineering surfaces. Four were selected for deep, high-fidelity simulation " +
-        "because they are representable as transaction-level data and each stresses a genuinely different " +
-        "detection signal (rather than four variations on the same pattern). The remaining four are " +
-        "documented as researched attack surfaces but require non-tabular modalities (audio, free text, " +
-        "images) outside this prototype's scope, and are noted as future extensions."
+        "Research covered seventeen distinct GenAI-powered payment fraud vectors across five categories: " +
+        "identity and onboarding attacks, social engineering at scale, transaction and behavioral attacks, " +
+        "merchant and ecosystem attacks, and infrastructure-level attacks against the AI systems themselves. " +
+        "Ten were selected for deep, high-fidelity simulation with working code and a trained defense; the " +
+        "remaining four are documented as researched attack surfaces but require non-tabular modalities " +
+        "(audio, video, free-form conversation) outside this prototype's scope."
       ),
       taxonomyTable(),
       new Paragraph({ text: "", spacing: { after: 200 } }),
-      body("Why these four were prioritized for simulation:", { bold: true }),
+      body("Why these ten were prioritized for simulation:", { bold: true }),
       bullet("Behavioral Mimicry → stresses profile-deviation features (amount and timing vs. personal history)"),
       bullet("Card Testing → stresses velocity and timing features"),
       bullet("Synthetic Identity → stresses account-age and history-consistency features"),
       bullet("Transaction Laundering → stresses merchant-category and amount-distribution features"),
+      bullet("Adversarial Evasion → attacks the classifier itself, requiring adversarial retraining rather than a static feature"),
+      bullet("Generative Synthetic Fraud → stresses category-familiarity, since the fraud looks statistically normal in isolation"),
+      bullet("Storefront Churn → stresses merchant lifespan and per-merchant transaction velocity"),
+      bullet("Loyalty Abuse → stresses new-account geographic clustering"),
+      bullet("Prompt Injection → targets a different AI component entirely (an LLM fraud-ops assistant), requiring a standalone guardrail rather than a classifier feature"),
 
       h1("3. How the System Generates and Simulates Attacks"),
       body(

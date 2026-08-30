@@ -1,0 +1,22 @@
+{
+  "clean": {
+    "precision": 0.9785276073619632,
+    "recall": 0.9815384615384616,
+    "f1": 0.9800307219662059
+  },
+  "poisoned": {
+    "precision": 0.9871382636655949,
+    "recall": 0.9446153846153846,
+    "f1": 0.9654088050314465
+  },
+  "defended": {
+    "precision": 0.9784615384615385,
+    "recall": 0.9784615384615385,
+    "f1": 0.9784615384615385
+  },
+  "poison_fraction": 0.4,
+  "n_poisoned": 389,
+  "n_flagged_by_filter": 356,
+  "n_correctly_flagged": 350,
+  "recall_recovery_pct": 0.9166666666666664
+}

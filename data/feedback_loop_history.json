@@ -2,21 +2,26 @@
   {
     "iteration": 0,
     "results": {
-      "precision": 0.996299722479186,
-      "recall": 0.9935424354243543,
-      "f1": 0.994919168591224,
-      "auc": 0.9999947878228782,
-      "false_positive_rate": 0.0002,
+      "precision": 0.9959612277867528,
+      "recall": 0.9959612277867528,
+      "f1": 0.9959612277867528,
+      "auc": 0.9998325525040388,
+      "false_positive_rate": 0.00025,
       "confusion_matrix": {
-        "tn": 19996,
-        "fp": 4,
-        "fn": 7,
-        "tp": 1077
+        "tn": 19995,
+        "fp": 5,
+        "fn": 5,
+        "tp": 1233
       },
       "per_attack_type": {
+        "loyalty_abuse": {
+          "detected": 60,
+          "total": 60,
+          "detection_rate": 1.0
+        },
         "synthetic_identity": {
-          "detected": 284,
-          "total": 284,
+          "detected": 296,
+          "total": 296,
           "detection_rate": 1.0
         },
         "transaction_laundering": {
@@ -24,34 +29,34 @@
           "total": 60,
           "detection_rate": 1.0
         },
-        "card_testing": {
-          "detected": 445,
-          "total": 445,
+        "storefront_churn": {
+          "detected": 244,
+          "total": 244,
           "detection_rate": 1.0
         },
-        "deepfake_voice_ato": {
-          "detected": 45,
-          "total": 45,
+        "adversarial_evasion": {
+          "detected": 40,
+          "total": 40,
           "detection_rate": 1.0
-        },
-        "biometric_spoofing": {
-          "detected": 45,
-          "total": 45,
-          "detection_rate": 1.0
-        },
-        "chargeback_narrative_fraud": {
-          "detected": 49,
-          "total": 55,
-          "detection_rate": 0.8909090909090909
         },
         "behavioral_mimicry": {
-          "detected": 59,
+          "detected": 56,
           "total": 60,
-          "detection_rate": 0.9833333333333333
+          "detection_rate": 0.9333333333333333
         },
-        "phishing_ato": {
-          "detected": 90,
-          "total": 90,
+        "card_testing": {
+          "detected": 398,
+          "total": 398,
+          "detection_rate": 1.0
+        },
+        "generative_synthetic_fraud": {
+          "detected": 44,
+          "total": 45,
+          "detection_rate": 0.9777777777777777
+        },
+        "prompt_injection": {
+          "detected": 35,
+          "total": 35,
           "detection_rate": 1.0
         }
       }
@@ -60,21 +65,26 @@
   {
     "iteration": 1,
     "results": {
-      "precision": 0.999104744852283,
-      "recall": 0.9973190348525469,
-      "f1": 0.998211091234347,
-      "auc": 0.9999995531724754,
-      "false_positive_rate": 5e-05,
+      "precision": 0.9968253968253968,
+      "recall": 0.9944576405384006,
+      "f1": 0.9956401109789933,
+      "auc": 0.9998709422011085,
+      "false_positive_rate": 0.0002,
       "confusion_matrix": {
-        "tn": 19999,
-        "fp": 1,
-        "fn": 3,
-        "tp": 1116
+        "tn": 19996,
+        "fp": 4,
+        "fn": 7,
+        "tp": 1256
       },
       "per_attack_type": {
+        "loyalty_abuse": {
+          "detected": 60,
+          "total": 60,
+          "detection_rate": 1.0
+        },
         "synthetic_identity": {
-          "detected": 284,
-          "total": 284,
+          "detected": 296,
+          "total": 296,
           "detection_rate": 1.0
         },
         "transaction_laundering": {
@@ -82,34 +92,34 @@
           "total": 60,
           "detection_rate": 1.0
         },
-        "card_testing": {
-          "detected": 445,
-          "total": 445,
+        "storefront_churn": {
+          "detected": 244,
+          "total": 244,
           "detection_rate": 1.0
         },
-        "deepfake_voice_ato": {
-          "detected": 45,
-          "total": 45,
-          "detection_rate": 1.0
-        },
-        "biometric_spoofing": {
-          "detected": 45,
-          "total": 45,
-          "detection_rate": 1.0
-        },
-        "chargeback_narrative_fraud": {
-          "detected": 85,
-          "total": 85,
-          "detection_rate": 1.0
+        "adversarial_evasion": {
+          "detected": 39,
+          "total": 40,
+          "detection_rate": 0.975
         },
         "behavioral_mimicry": {
-          "detected": 62,
-          "total": 65,
-          "detection_rate": 0.9538461538461539
+          "detected": 76,
+          "total": 80,
+          "detection_rate": 0.95
         },
-        "phishing_ato": {
-          "detected": 90,
-          "total": 90,
+        "card_testing": {
+          "detected": 398,
+          "total": 398,
+          "detection_rate": 1.0
+        },
+        "generative_synthetic_fraud": {
+          "detected": 48,
+          "total": 50,
+          "detection_rate": 0.96
+        },
+        "prompt_injection": {
+          "detected": 35,
+          "total": 35,
           "detection_rate": 1.0
         }
       }
@@ -118,21 +128,26 @@
   {
     "iteration": 2,
     "results": {
-      "precision": 0.9982363315696648,
-      "recall": 0.9982363315696648,
-      "f1": 0.9982363315696648,
-      "auc": 0.9999996031746031,
-      "false_positive_rate": 0.0001,
+      "precision": 0.9930822444273636,
+      "recall": 0.9953775038520801,
+      "f1": 0.9942285494420932,
+      "auc": 0.9998586286594762,
+      "false_positive_rate": 0.00045,
       "confusion_matrix": {
-        "tn": 19998,
-        "fp": 2,
-        "fn": 2,
-        "tp": 1132
+        "tn": 19991,
+        "fp": 9,
+        "fn": 6,
+        "tp": 1292
       },
       "per_attack_type": {
+        "loyalty_abuse": {
+          "detected": 60,
+          "total": 60,
+          "detection_rate": 1.0
+        },
         "synthetic_identity": {
-          "detected": 284,
-          "total": 284,
+          "detected": 296,
+          "total": 296,
           "detection_rate": 1.0
         },
         "transaction_laundering": {
@@ -140,34 +155,34 @@
           "total": 60,
           "detection_rate": 1.0
         },
-        "card_testing": {
-          "detected": 445,
-          "total": 445,
+        "storefront_churn": {
+          "detected": 244,
+          "total": 244,
           "detection_rate": 1.0
         },
-        "deepfake_voice_ato": {
+        "adversarial_evasion": {
           "detected": 45,
           "total": 45,
-          "detection_rate": 1.0
-        },
-        "biometric_spoofing": {
-          "detected": 45,
-          "total": 45,
-          "detection_rate": 1.0
-        },
-        "chargeback_narrative_fraud": {
-          "detected": 85,
-          "total": 85,
           "detection_rate": 1.0
         },
         "behavioral_mimicry": {
-          "detected": 78,
-          "total": 80,
-          "detection_rate": 0.975
+          "detected": 95,
+          "total": 100,
+          "detection_rate": 0.95
         },
-        "phishing_ato": {
-          "detected": 90,
-          "total": 90,
+        "card_testing": {
+          "detected": 398,
+          "total": 398,
+          "detection_rate": 1.0
+        },
+        "generative_synthetic_fraud": {
+          "detected": 59,
+          "total": 60,
+          "detection_rate": 0.9833333333333333
+        },
+        "prompt_injection": {
+          "detected": 35,
+          "total": 35,
           "detection_rate": 1.0
         }
       }

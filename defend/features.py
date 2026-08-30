@@ -9,16 +9,18 @@ specific signatures of each attack family in the taxonomy:
 - Account-age / history-thinness features (synthetic_identity)
 - Merchant-category amount deviation (transaction_laundering)
 - Geo deviation from home location
-- Device-familiarity features (deepfake_voice_ato, phishing_ato,
-  biometric_spoofing -- all three route the attack through a device or
-  channel the user hasn't used before)
-- Auth-confidence features (deepfake_voice_ato, biometric_spoofing --
-  both attacks pass a step-up/verification check, but with a lower
-  match confidence than a genuine authorization)
-- Channel one-hot flags (call_center / app_biometric channels are
-  disproportionately used by the identity-based attack families)
-- Dispute/narrative features (chargeback_narrative_fraud -- the fraud
-  signal lives in the dispute rather than the original purchase)
+- Category familiarity: how often THIS user shops THIS category
+  (generative_synthetic_fraud: amount/timing look normal in isolation,
+  but the category is foreign to this specific user's own history)
+- Merchant lifespan / velocity (storefront_churn: a merchant_id that
+  appears briefly then vanishes, with a burst of transactions in that window)
+- New-account geo clustering (loyalty_abuse: many brand-new accounts
+  transacting from a suspiciously tight geographic cluster)
+
+Note: adversarial_evasion and prompt_injection are NOT primarily caught by
+these numeric features -- see loop/adversarial_loop.py (adversarial
+retraining) and defend/prompt_injection_guard.py (text-pattern guardrail)
+respectively.
 """
 
 import numpy as np
@@ -84,50 +86,50 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     # account-age related
     df["is_new_account"] = (df["card_age_days_at_tx"] < 30).astype(int)
 
-    # --- device-familiarity: has this user transacted from this device before? ---
-    # (walks the sorted history per user; the first time a device appears for
-    # a given user it counts as "new", same logic a real device-fingerprinting
-    # system would use)
-    if "device_id" in df.columns:
-        df["is_new_device"] = 0
-        for uid, group in df.groupby("user_id"):
-            seen = set()
-            flags = []
-            for dev in group["device_id"]:
-                flags.append(0 if dev in seen else 1)
-                seen.add(dev)
-            df.loc[group.index, "is_new_device"] = flags
-    else:
-        df["is_new_device"] = 0
+    # --- category familiarity (catches generative_synthetic_fraud) ---
+    # fraction of this user's own transaction history spent in this category
+    cat_counts = df.groupby(["user_id", "merchant_category"]).size().rename("user_cat_count")
+    df = df.merge(cat_counts, on=["user_id", "merchant_category"], how="left")
+    df["category_familiarity"] = (df["user_cat_count"] / df["user_txn_count"]).fillna(0)
 
-    # --- auth-confidence: how confident was the verification/step-up check? ---
-    if "auth_confidence" in df.columns:
-        df["auth_confidence"] = df["auth_confidence"].fillna(0.95)
-        df["low_auth_confidence"] = (df["auth_confidence"] < 0.8).astype(int)
-    else:
-        df["auth_confidence"] = 0.95
-        df["low_auth_confidence"] = 0
+    # --- merchant lifespan / velocity (catches storefront_churn) ---
+    if "merchant_id" not in df.columns:
+        df["merchant_id"] = "unknown"
+    df["merchant_id"] = df["merchant_id"].fillna("unknown")
+    merch_stats = df.groupby("merchant_id")["timestamp"].agg(["min", "max", "count"])
+    merch_stats["merchant_lifespan_hours"] = (
+        (merch_stats["max"] - merch_stats["min"]).dt.total_seconds() / 3600.0
+    ).clip(lower=0.01)
+    merch_stats["merchant_txn_count"] = merch_stats["count"]
+    merch_stats["merchant_velocity"] = merch_stats["merchant_txn_count"] / merch_stats["merchant_lifespan_hours"]
+    df = df.merge(
+        merch_stats[["merchant_lifespan_hours", "merchant_txn_count", "merchant_velocity"]],
+        on="merchant_id", how="left",
+    )
 
-    # --- channel flags: identity-based attacks concentrate in specific channels ---
-    if "channel" in df.columns:
-        df["is_call_center_channel"] = (df["channel"] == "call_center").astype(int)
-        df["is_app_biometric_channel"] = (df["channel"] == "app_biometric").astype(int)
-    else:
-        df["is_call_center_channel"] = 0
-        df["is_app_biometric_channel"] = 0
+    # --- new-account geo clustering (catches loyalty_abuse) ---
+    df["geo_bucket"] = df["latitude"].round(1).astype(str) + "_" + df["longitude"].round(1).astype(str)
+    new_acct_cluster = (
+        df[df["is_new_account"] == 1]
+        .groupby("geo_bucket")["user_id"].nunique()
+        .rename("new_accounts_in_geo_bucket")
+    )
+    df = df.merge(new_acct_cluster, on="geo_bucket", how="left")
+    df["new_accounts_in_geo_bucket"] = df["new_accounts_in_geo_bucket"].fillna(0)
 
-    # --- OTP/step-up bypass flag (deepfake voice ATO talks agents into this) ---
-    df["otp_override"] = df["otp_override"].fillna(0).astype(int) if "otp_override" in df.columns else 0
-
-    # --- dispute/narrative features (chargeback narrative fraud) ---
-    if "dispute_filed" in df.columns:
-        df["dispute_filed"] = df["dispute_filed"].fillna(0).astype(int)
-    else:
-        df["dispute_filed"] = 0
-    if "dispute_narrative_similarity" in df.columns:
-        df["dispute_narrative_similarity"] = df["dispute_narrative_similarity"].fillna(0.0)
-    else:
-        df["dispute_narrative_similarity"] = 0.0
+    # --- prompt injection text signal (numeric proxy for the guardrail) ---
+    if "memo" not in df.columns:
+        df["memo"] = ""
+    df["memo"] = df["memo"].fillna("")
+    injection_keywords = [
+        "ignore previous", "disregard", "system note", "assistant,", "new instruction",
+        "auto-clear", "mark this transaction", "approve all", "do not flag",
+        "already been verified", "close ticket",
+    ]
+    df["memo_lower"] = df["memo"].str.lower()
+    df["memo_has_injection_pattern"] = df["memo_lower"].apply(
+        lambda m: int(any(kw in m for kw in injection_keywords))
+    )
 
     # merchant category encoded
     df = pd.get_dummies(df, columns=["merchant_category"], prefix="cat")
@@ -139,7 +141,6 @@ FEATURE_COLUMNS = [
     "amount", "amount_zscore", "geo_deviation", "time_since_prev_txn_sec",
     "txns_last_10min", "amount_over_category_ceiling", "is_round_amount",
     "is_new_account", "card_age_days_at_tx", "user_txn_count",
-    "is_new_device", "auth_confidence", "low_auth_confidence",
-    "is_call_center_channel", "is_app_biometric_channel", "otp_override",
-    "dispute_filed", "dispute_narrative_similarity",
+    "category_familiarity", "merchant_lifespan_hours", "merchant_txn_count",
+    "merchant_velocity", "new_accounts_in_geo_bucket", "memo_has_injection_pattern",
 ]

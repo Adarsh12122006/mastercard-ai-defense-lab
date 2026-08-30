@@ -1,7 +1,7 @@
 """
 Orchestrates the full synthetic dataset generation:
   1. Generate base legitimate transactions + user profiles
-  2. Inject each of the 8 attack types from the taxonomy
+  2. Inject each of the 4 attack types
   3. Combine into a single labeled dataset (data/synthetic_dataset.csv)
 
 Run from the project root:
@@ -22,10 +22,10 @@ from generators.behavioral_mimicry import generate_behavioral_mimicry_attacks
 from generators.card_testing import generate_card_testing_attacks
 from generators.synthetic_identity import generate_synthetic_identity_attacks
 from generators.transaction_laundering import generate_transaction_laundering_attacks
-from generators.deepfake_voice_ato import generate_deepfake_voice_ato_attacks
-from generators.phishing_ato import generate_phishing_ato_attacks
-from generators.chargeback_narrative_fraud import generate_chargeback_narrative_fraud_attacks
-from generators.biometric_spoofing import generate_biometric_spoofing_attacks
+from generators.prompt_injection import generate_prompt_injection_attacks
+from generators.generative_synthetic_fraud import generate_gmm_synthetic_fraud
+from generators.storefront_churn import generate_storefront_churn_attacks
+from generators.loyalty_abuse import generate_loyalty_abuse_attacks
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 
@@ -37,10 +37,10 @@ def build_dataset(
     n_card_testing_campaigns=40,
     n_synthetic_identities=50,
     n_laundering=60,
-    n_deepfake_voice_ato=45,
-    n_phishing_ato=45,
-    n_chargeback_narrative_fraud=55,
-    n_biometric_spoofing=45,
+    n_prompt_injection=35,
+    n_generative_fraud=45,
+    n_storefronts=20,
+    n_loyalty_bot_accounts=60,
     seed_days=60,
 ):
     print("Generating user profiles...")
@@ -64,23 +64,21 @@ def build_dataset(
     print("Generating Attack 4: Transaction Laundering...")
     laundering_df = generate_transaction_laundering_attacks(profiles, legit_df, n_attacks=n_laundering)
 
-    print("Generating Attack 5: Deepfake Voice ATO...")
-    deepfake_df = generate_deepfake_voice_ato_attacks(profiles, legit_df, n_attacks=n_deepfake_voice_ato)
+    print("Generating Attack 6: Prompt Injection (fraud-ops AI targeting)...")
+    injection_df = generate_prompt_injection_attacks(profiles, legit_df, n_attacks=n_prompt_injection)
 
-    print("Generating Attack 6: Personalized Phishing ATO...")
-    phishing_df = generate_phishing_ato_attacks(profiles, legit_df, n_attacks=n_phishing_ato)
+    print("Generating Attack 7: Generative-Model-Based Synthetic Fraud...")
+    generative_df = generate_gmm_synthetic_fraud(profiles, legit_df, n_attacks=n_generative_fraud)
 
-    print("Generating Attack 7: Chargeback Narrative Fraud...")
-    chargeback_df = generate_chargeback_narrative_fraud_attacks(profiles, legit_df, n_attacks=n_chargeback_narrative_fraud)
+    print("Generating Attack 8: Autonomous Storefront Churn...")
+    churn_df = generate_storefront_churn_attacks(profiles, legit_df, n_storefronts=n_storefronts)
 
-    print("Generating Attack 8: Biometric Spoofing...")
-    biometric_df = generate_biometric_spoofing_attacks(profiles, legit_df, n_attacks=n_biometric_spoofing)
+    print("Generating Attack 9: Loyalty/Rewards Program Abuse...")
+    loyalty_df = generate_loyalty_abuse_attacks(legit_df, n_bot_accounts=n_loyalty_bot_accounts)
 
     full_df = pd.concat(
-        [
-            legit_df, mimicry_df, card_testing_df, synth_id_df, laundering_df,
-            deepfake_df, phishing_df, chargeback_df, biometric_df,
-        ],
+        [legit_df, mimicry_df, card_testing_df, synth_id_df, laundering_df,
+         injection_df, generative_df, churn_df, loyalty_df],
         ignore_index=True,
     ).sort_values("timestamp").reset_index(drop=True)
 

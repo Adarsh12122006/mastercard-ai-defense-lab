@@ -39,8 +39,6 @@ def generate_card_testing_attacks(
 
     for profile in targets:
         n_txns = random.randint(*txns_per_campaign_range)
-        # entire probing campaign runs from a single attacker-controlled device
-        campaign_device_id = f"dev_{uuid.uuid4().hex[:8]}"
         day_offset = random.randint(0, span_days - 1)
         # campaign starts at a random moment
         campaign_start = min_ts + timedelta(
@@ -63,16 +61,12 @@ def generate_card_testing_attacks(
                 "timestamp": current_ts,
                 "amount": amount,
                 "merchant_category": category,
+                "merchant_id": f"merch_{category}_{random.randint(1,120):03d}",
+                "memo": "",
                 "latitude": round(lat, 4),
                 "longitude": round(lon, 4),
                 "card_age_days_at_tx": profile["card_age_days"],
-                "channel": "ecom",
-            "device_id": campaign_device_id,
-            "auth_confidence": round(float(np.random.uniform(0.5, 0.85)), 4),
-            "dispute_filed": 0,
-            "dispute_narrative_similarity": 0.0,
-            "otp_override": 0,
-            "is_fraud": 1,
+                "is_fraud": 1,
                 "attack_type": "card_testing",
             })
 

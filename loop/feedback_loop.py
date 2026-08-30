@@ -42,6 +42,12 @@ def find_misses(df: pd.DataFrame, model, feature_cols) -> pd.DataFrame:
     preds = model.predict(X)
     df = df.copy()
     df["pred"] = preds
+    # reconstruct merchant_category from the one-hot "cat_*" columns before
+    # returning misses, since raw_cols lookup downstream needs the original
+    # categorical column (get_dummies drops it during feature engineering)
+    cat_cols = [c for c in df.columns if c.startswith("cat_")]
+    if cat_cols:
+        df["merchant_category"] = df[cat_cols].idxmax(axis=1).str.replace("cat_", "", regex=False)
     misses = df[(df["is_fraud"] == 1) & (df["pred"] == 0)]
     return misses
 
